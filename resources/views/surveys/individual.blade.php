@@ -25,18 +25,46 @@
 <div class="container mt-5">
 	<h4>@lang('Please answer the following questions in the most appropriate way')</h4>
     <p>@lang('Each question has 5 options.')</p>
-
     <div class="container" id="form">
-        <div class="row">
-            <div class="col-md-6 col-12">Question 1</div>
-            <div class="col-md-6 col-12">
-                <label class="radio-inline"><input type="radio" name="optradio" checked>Option 1</label>
-                <label class="radio-inline"><input type="radio" name="optradio" >Option 1</label>
-                <label class="radio-inline"><input type="radio" name="optradio" >Option 1</label>
-                <label class="radio-inline"><input type="radio" name="optradio" >Option 1</label>
-                <label class="radio-inline"><input type="radio" name="optradio" >Option 1</label>
+        <form method="POST" action="{{ route('form_evaluation_individual') }}">
+            @csrf
+            <div class="row mb-3">
+                <div class="col-md-5 col-12 pt-5">
+                    <strong class="pt-5">@lang('Questions')</strong>
+                </div>
+                <div class="col-md-7 col-12">
+                    <strong>
+                        <label class="radio-inline col-2">@lang("Strongly disagree")</label>
+                        <label class="radio-inline col-2">@lang("Somewhat disagree")</label>
+                        <label class="radio-inline col-2">@lang("Neither agree nor disagree")</label>
+                        <label class="radio-inline col-2">@lang("Somewhat agree")</label>
+                        <label class="radio-inline col-2">@lang("Strongly agree")</label>
+                    </strong>
+                </div>
             </div>
-        </div>
+            <hr>
+            @foreach ($questions as $question)
+                <div class="form-group row">
+                    <div class="col-md-5 col-12">
+                        {{ $question->question }}
+                    </div>
+                    <div class="col-md-7 col-12">
+                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="1" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="2" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="3" checked> </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="4" ></label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="5" ></label>
+                    </div>
+                </div>
+            @endforeach
+            <div class="form-group row my-5">
+                <div class="col-md-6 offset-md-10 offset-8">
+                    <button type="submit" class="btn btn-primary">
+                        @lang('Send')
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 @endsection

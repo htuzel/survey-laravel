@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'RouteController@home')->name('home');
-Route::get('/individual-survey', 'RouteController@individual')->name('home');
+
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -27,4 +27,13 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+//Admin Pages
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Survey Routes..
+Route::get('/individual-survey', 'RouteController@individual')->name('individual_survey');
+Route::get('/group-survey', 'RouteController@group')->name('group_survey');
+
+Route::post('/result-individual', 'ResultController@individual')->name('form_evaluation_individual');
+Route::post('/result-group', 'ResultController@group')->name('form_evaluation_group');
+
