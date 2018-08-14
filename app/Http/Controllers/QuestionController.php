@@ -14,7 +14,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::where('lang','en')->simplePaginate(100);
+        $questions = Question::paginate(100);
         return view('admin.questions')->with('questions',$questions);
     }
 

@@ -29,14 +29,18 @@
         <form method="POST" action="{{ route('form_evaluation_group') }}">
             @csrf
             <div class="row">
-                <div class="form-group col-12 col-md-6">
+                <div class="form-group col-12 col-md-2">
                     <label for="groupPin">@lang('Group Pin')</label>
-                    <input type="password" class="form-control" id="groupPin" placeholder="Group Pin..">
+                    <input type="password" class="form-control" name="pin" id="groupPin" placeholder="Group Pin.." required>
                     <small class="form-text text-muted">@lang('Please type the group pin provided by your instructor.')</small>
                 </div>
-                <div class="form-group col-12 col-md-6">
+                <div class="form-group col-12 col-md-5">
+                    <label for="Email">@lang('Your Email')</label>
+                    <input type="email" class="form-control" name="email" id="Email" placeholder="Your Email.." required>
+                </div>
+                <div class="form-group col-12 col-md-5">
                     <label for="Name">@lang('Your Name')</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Name..">
+                    <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name..">
                 </div>
             </div>
             <div class="row mb-3">

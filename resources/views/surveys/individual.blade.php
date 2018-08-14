@@ -28,6 +28,16 @@
     <div class="container" id="form">
         <form method="POST" action="{{ route('form_evaluation_individual') }}">
             @csrf
+            <div class="row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="Email">@lang('Your Email')</label>
+                    <input type="email" class="form-control" name="email" id="Email" placeholder="Your Email.." required>
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label for="Name">@lang('Your Name')</label>
+                    <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name..">
+                </div>
+            </div>
             <div class="row mb-3">
                 <div class="col-md-5 col-12 pt-5">
                     <strong class="pt-5">@lang('Questions')</strong>

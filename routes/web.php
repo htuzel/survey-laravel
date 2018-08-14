@@ -20,8 +20,8 @@ Route::get('/', 'RouteController@home')->name('mainpage');
 Route::get('/individual-survey', 'RouteController@individual')->name('individual_survey');
 Route::get('/group-survey', 'RouteController@group')->name('group_survey');
 
-Route::post('/result-individual', 'ResultController@individual')->name('form_evaluation_individual');
-Route::post('/result-group', 'ResultController@group')->name('form_evaluation_group');
+Route::post('/result-individual', 'ResultPageController@individual')->name('form_evaluation_individual');
+Route::post('/result-group', 'ResultPageController@group')->name('form_evaluation_group');
 
 
 Auth::routes();
@@ -31,5 +31,6 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('questions', 'QuestionController');
+    Route::resource('groups', 'GroupController');
 
 });

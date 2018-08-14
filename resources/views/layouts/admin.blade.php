@@ -35,7 +35,7 @@
             <ul class="list-unstyled components">
                 <p>Admin Panel</p>
                 <li id="groups_menu">
-                    <a href="#">@lang("Groups")</a>
+                    <a href="/groups">@lang("Groups")</a>
                 </li>
                 <li id="results_menu">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@lang('Results')</a>
@@ -49,7 +49,7 @@
                     </ul>
                 </li>
                 <li id="questions_menu">
-                    <a href="#">@lang("Questions")</a>
+                    <a href="/questions">@lang("Questions")</a>
                 </li>
             </ul>
             <ul class="list-unstyled CTAs">
@@ -57,7 +57,7 @@
                     <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">@lang('Download Results')</a>
                 </li>
                 <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">@lang('Back to Home')</a>
+                    <a href="/" class="article">@lang('Back to Home')</a>
                 </li>
             </ul>
         </nav>

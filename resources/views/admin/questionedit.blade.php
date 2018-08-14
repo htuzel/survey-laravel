@@ -24,7 +24,7 @@
                                 <div class="row">
                                     <div class="form-group col-12">
                                         <label for="question">@lang('Question')</label>
-                                        <textarea class="form-control" rows="3" id="question" name="question" > {{ $question->question }}</textarea>
+                                        <textarea class="form-control" rows="3" id="question" name="question" required> {{ $question->question }}</textarea>
                                     </div>
                                 </div>
                                 <div class="row">
