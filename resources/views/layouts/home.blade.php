@@ -2,7 +2,6 @@
 <html lang="en">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="media literacy, survey, digital media education, media education lab">
@@ -25,7 +24,7 @@
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">@lang('Welcome To Our Digital Media Education Survey')</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
+          @lang('Menu')
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -39,44 +38,35 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#admin">@lang('Admin Entry')</a>
             </li>
+            @guest
+
+            @else
+            <li class="nav-item mx-0 mx-lg-1 pt-2 dropdown">
+                <a id="navbarDropdown nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+        @endguest
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="images/mediaicons.png" alt="Media Education Lab" width="90px" height="90px" >
-        <h1 class="text-uppercase mb-0">@lang('Discover yourself now!')</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">@lang('Join our Digital Media Literacy Survey Free!')</h2>
-      </div>
-    </header>
 
-    <!-- Individual Section -->
-    <section class="portfolio">
-      <div class="container" id="individual">
-        <h2 class="text-center text-uppercase text-secondary mb-0">@lang('Individual Entry')</h2>
-        <hr class="star-dark mb-5">
-      </div>
-    </section>
+    @yield('content')
 
-    <!-- Group Section -->
-    <section class="bg-primary text-white mb-0">
-        <div class="container" id="group">
-            <h2 class="text-center text-uppercase text-white mb-0">@lang('Group Entry')</h2>
-            <hr class="star-light mb-5">
-          </div>
-    </section>
-
-    <!-- Individual Grid Section -->
-    <section class="portfolio">
-        <div class="container" id="admin">
-          <h2 class="text-center text-uppercase text-secondary mb-0">@lang('Admin Entry')</h2>
-          <hr class="star-dark mb-5">
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer text-center">
@@ -116,14 +106,14 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h4 class="text-uppercase mb-4">Contact</h4>
+            <h4 class="text-uppercase mb-4">@lang('Contact')</h4>
             <p class="lead mb-0"><small>108 Davis Hall
                 Media Education Lab </br>
                 Harrington School of Communication and Media </br>
                 University of Rhode Island </br>
                 Davis Hall Kingston, Rhode Island 02881 USA </br>
                 </br>
-                Email: media@mediaeducationlab.com  </small>
+                @lang('Email'): media@mediaeducationlab.com  </small>
           </div>
         </div>
       </div>
@@ -131,7 +121,7 @@
 
     <div class="copyright py-4 text-center text-white">
       <div class="container">
-        <small>Copyright &copy; Your Website 2018</small>
+        <small>@lang('Copyright') &copy;2018</small>
       </div>
     </div>
 
