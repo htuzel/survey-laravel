@@ -22,7 +22,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">@lang('Welcome To Our Digital Media Education Survey')</a>
+        <a class="navbar-brand js-scroll-trigger" href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           @lang('Menu')
           <i class="fa fa-bars"></i>

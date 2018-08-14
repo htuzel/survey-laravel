@@ -11,7 +11,7 @@ class RouteController extends Controller
     //return home page views
     public function home()
     {
-        return view('home');
+        return view('homepage');
     }
 
     //return individual forms page views

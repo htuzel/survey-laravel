@@ -14,7 +14,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::where('lang','en')->simplePaginate(100);
+        return view('admin.questions')->with('questions',$questions);
     }
 
     /**
@@ -24,7 +25,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.questioncreate');
     }
 
     /**
@@ -35,7 +36,19 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required|max:1000',
+            'motivation' => 'required',
+            'style' => 'required',
+            'language' => 'required',
+        ]);
+        $question = new Question;
+        $question->question = $request->input('question');
+        $question->motivation = $request->input('motivation');
+        $question->style = $request->input('style');
+        $question->lang = $request->input('language');
+        $question->save();
+        return redirect()->action('QuestionController@index');
     }
 
     /**
@@ -55,9 +68,11 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit($id)
     {
-        //
+        $question= Question::find($id);
+        return view('admin.questionedit')->with('question',$question);
+
     }
 
     /**
@@ -67,9 +82,21 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'question' => 'required|max:1000',
+            'motivation' => 'required',
+            'style' => 'required',
+            'language' => 'required',
+        ]);
+        $question = Question::find($id);
+        $question->question = $request->input('question');
+        $question->motivation = $request->input('motivation');
+        $question->style = $request->input('style');
+        $question->lang = $request->input('language');
+        $question->save();
+        return redirect()->action('QuestionController@index');
     }
 
     /**
@@ -78,8 +105,14 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Question $question)
+    public function destroy($id)
     {
-        //
+        $question = Question::find($id);
+        try{
+            $question->delete();
+            return "successfully deleted";
+        }catch(Exception $e){
+            return "unsuccesfully deleted";
+        }
     }
 }
