@@ -30,13 +30,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#individual">@lang('Individual Entry')</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#group">@lang('Group Entry')</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#admin">@lang('Admin Entry')</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('home') }}">@lang('Admin Entry')</a>
             </li>
             @guest
 

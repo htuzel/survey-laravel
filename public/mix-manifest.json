@@ -4,7 +4,5 @@
     "/css/home.css": "/css/home.css",
     "/js/external_js_files/jquery.easing.js": "/js/external_js_files/jquery.easing.js",
     "/js/external_js_files/freelancer.js": "/js/external_js_files/freelancer.js",
-    "/js/external_js_files/jquery.magnific-popup.js": "/js/external_js_files/jquery.magnific-popup.js",
-    "/js/external_js_files/jqBootstrapValidation.js": "/js/external_js_files/jqBootstrapValidation.js",
-    "/js/external_js_files/contact_me.js": "/js/external_js_files/contact_me.js"
+    "/css/admin.css": "/css/admin.css"
 }

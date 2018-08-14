@@ -37,3 +37,7 @@ Route::get('/group-survey', 'RouteController@group')->name('group_survey');
 Route::post('/result-individual', 'ResultController@individual')->name('form_evaluation_individual');
 Route::post('/result-group', 'ResultController@group')->name('form_evaluation_group');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
