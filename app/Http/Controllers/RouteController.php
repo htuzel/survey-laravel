@@ -18,15 +18,20 @@ class RouteController extends Controller
     public function individual()
     {
         $locale = App::getLocale();
-        $questions = Question::where('lang','en')->get();
+        $questions = Question::where('lang',$locale)->get();
         return view('surveys.individual')->with('questions',$questions);
     }
 
-        //return individual forms page views
-        public function group()
-        {
-            $locale = App::getLocale();
-            $questions = Question::where('lang','en')->get();
-            return view('surveys.group')->with('questions',$questions);
-        }
+    //return individual forms page views
+    public function group()
+    {
+        $locale = App::getLocale();
+        $questions = Question::where('lang',$locale)->get();
+        return view('surveys.group')->with('questions',$questions);
+    }
+
+    public function result()
+    {
+        return view('surveys.results');
+    }
 }

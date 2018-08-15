@@ -18,6 +18,7 @@ Route::group(['middleware' => 'language'], function () {
     //Survey Routes..
     Route::get('/individual-survey', 'RouteController@individual')->name('individual_survey');
     Route::get('/group-survey', 'RouteController@group')->name('group_survey');
+    Route::get('/result','RouteController@result')->name('result');
 
     Route::post('/result-individual', 'ResultPageController@individual')->name('form_evaluation_individual');
     Route::post('/result-group', 'ResultPageController@group')->name('form_evaluation_group');

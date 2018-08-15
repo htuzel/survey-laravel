@@ -10,12 +10,10 @@ use Lang;
 class ResultPageController extends Controller
 {
     public function individual(Request $request) {
-
         $validatedData = $request->validate([
             'name' => 'required|max:1000',
             'email' => 'required|max:1000|email',
         ]);
-
         $result = new Result();
         $result->name = $request->input('name');
         $result->email = $request->input('email');
@@ -44,26 +42,21 @@ class ResultPageController extends Controller
                             $request->input('answer.41') + $request->input('answer.42') + $request->input('answer.43') + $request->input('answer.44') +
                             $request->input('answer.45') + $request->input('answer.46') + $request->input('answer.47') + $request->input('answer.48');
         $result->save();
-
-        return $result->sort();
-
+        return view('surveys.results')->with('results',$result->sort());
     }
 
     public function group(Request $request) {
-
         $validatedData = $request->validate([
             'group_name' => 'required|max:200',
             'pin' => 'required|max:100',
             'name' => 'required|max:1000',
             'email' => 'required|max:1000|email',
         ]);
-
         $group = Group::where('name',$request->input('name'))->where('pin',$request->input('pin'))->first();
         if($group == null)
         {
             return redirect()->route("group_survey")->with('alert', Lang::get('Please provide a valid group name and pin.'));
         }
-
         $result = new Result();
         $result->name = $request->input('name');
         $result->email = $request->input('email');
@@ -92,8 +85,6 @@ class ResultPageController extends Controller
                             $request->input('answer.41') + $request->input('answer.42') + $request->input('answer.43') + $request->input('answer.44') +
                             $request->input('answer.45') + $request->input('answer.46') + $request->input('answer.47') + $request->input('answer.48');
         $result->save();
-
-        return $result->sort();
-
+        return view('surveys.results')->with('results',$result->sort());
     }
 }

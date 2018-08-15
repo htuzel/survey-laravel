@@ -1,79 +1,155 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<html lang="en">
+
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="media literacy, survey, digital media education, media education lab">
+    <meta name="author" content="">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@lang('Media Literacy Survey')</title>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Custom fonts for this template -->
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+  </head>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+  <body id="page-top">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          @lang('Menu')
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('home') }}">@lang('Admin Entry')</a>
+            </li>
+            @guest
+            <li class="nav-item dropdown mx-lg-1 pt-2">
+                <a id="langDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" v-pre>
+                    <strong id="locale">{{ app()->getLocale() }} </strong>
+                    <span class="caret"></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                <div class="dropdown-menu">
+                    @foreach (language()->allowed() as $code => $name)
+                    <span class="caret"></span>
+                    <span class="caret"></span>
+                    <a class="dropdown-item" href="{{ language()->back($code) }}">{{ $name }} </a>
+                    @endforeach
                 </div>
-            </div>
-        </nav>
+            </li>
+            @else
+            <li class="nav-item mx-0 mx-lg-1 pt-2 dropdown">
+                <a id="navbarDropdown nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+        @endguest
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    @yield('content')
+
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">@lang('Our Mission')</h4>
+                <p class="lead mb-0">
+                    <small>
+                    @lang('The Media Education Lab at the University of Rhode Island advances media literacy education through research and community service. We emphasize interdisciplinary scholarship and practice that stands at the intersections of communication, media studies and education.')
+                    </small>
+                </p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="https://www.facebook.com/mediaeducationlab">
+                    <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="https://twitter.com/MedEduLab">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="https://www.instagram.com/digiuriwinter/">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="https://www.linkedin.com/company/media-education-lab/">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">@lang('Contact')</h4>
+            <p class="lead mb-0"><small>108 Davis Hall
+                Media Education Lab </br>
+                Harrington School of Communication and Media </br>
+                University of Rhode Island </br>
+                Davis Hall Kingston, Rhode Island 02881 USA </br>
+                </br>
+                @lang('Email'): media@mediaeducationlab.com  </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>@lang('Copyright') &copy;2018</small>
+      </div>
     </div>
-</body>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+
+
+
+
+  </body>
+
 </html>

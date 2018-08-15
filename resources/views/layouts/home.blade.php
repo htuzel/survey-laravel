@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <script src="{{ asset('js/app.js') }}"></script>
   </head>
 
   <body id="page-top">
@@ -44,7 +45,7 @@
                     aria-haspopup="true" aria-expanded="false" v-pre>
                     <strong id="locale">{{ app()->getLocale() }} </strong>
                     <span class="caret"></span>
-                </a>   
+                </a>
                 <div class="dropdown-menu">
                     @foreach (language()->allowed() as $code => $name)
                     <span class="caret"></span>
@@ -146,7 +147,6 @@
     </div>
 
 
-    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Plugin JavaScript -->
     <script src="{{ asset('js/external_js_files/jquery.easing.js') }}"></script>
