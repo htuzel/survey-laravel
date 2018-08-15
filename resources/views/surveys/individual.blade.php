@@ -68,13 +68,14 @@
                         {{ $question->question }}
                     </div>
                     <div class="col-md-7 col-12">
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="1" > </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="2" > </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="3" checked> </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="4" ></label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="5" ></label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="1" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="2" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="3" checked> </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="4" ></label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="5" ></label>
                     </div>
                 </div>
+                <hr>
             @endforeach
             <div class="form-group row my-5">
                 <div class="col-md-6 offset-md-10 offset-8">

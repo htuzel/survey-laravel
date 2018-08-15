@@ -9,7 +9,7 @@
                     <div class="card-header bg-secondary text-white"><strong>@lang('Questions')</strong></div>
                         <div class="card-body">
                         <div id="browse_app">
-                            <a class="btn btn-large btn-info float-right m-2" href="questions/create"><i class="fa fa-plus mr-1"></i>@lang('New Question')</a>
+                            <a class="btn btn-large btn-info float-right m-2" href="questions/create" {{--   style="pointer-events: none; cursor: not-allowed; opacity: 0.5;" --}}><i class="fa fa-plus mr-1"></i>@lang('New Question')</a>
                         </div>
                         <input class="form-control" id="searchtable" type="text" placeholder="@lang('Search..')">
                         <br>
@@ -34,10 +34,10 @@
                                             <td style="text-transform: capitalize">{{ $question->lang }}</td>
                                             <td>
                                                 <span>
-                                                    <button onclick="edit('{{ $question->id  }}')" type="button" class="btn btn-link text-warning p-0">@lang('Edit')</button>
+                                                    <button onclick="edit('{{ $question->id  }}')" type="button" class="btn btn-link text-warning p-0" disabled>@lang('Edit')</button>
                                                 </span>
                                                 <span>
-                                                    <button onclick="delete_question('{{ $question->id  }}')" type="button" class="btn btn-link text-danger p-0">@lang('Delete')</button>
+                                                    <button onclick="delete_question('{{ $question->id  }}')" type="button" class="btn btn-link text-danger p-0" disabled>@lang('Delete')</button>
                                                 </span>
                                             </td>
                                         </tr>

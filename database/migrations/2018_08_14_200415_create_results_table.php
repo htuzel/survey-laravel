@@ -18,10 +18,20 @@ class CreateResultsTable extends Migration
             $table->string('name',100);
             $table->string('email',100);
             $table->integer('group_id')->nullable();
-            $table->integer('motivation1_id');
-            $table->integer('motivation2_id');
-            $table->integer('motivation3_id');
-            $table->integer('style_id');
+            $table->integer('activist');
+            $table->integer('alt');
+            $table->integer('demystifier');
+            $table->integer('motivator');
+            $table->integer('professional');
+            $table->integer('professor');
+            $table->integer('spirit_guide');
+            $table->integer('taste_maker');
+            $table->integer('teacher');
+            $table->integer('techie');
+            $table->integer('trendsetter');
+            $table->integer('watchdog');
+            $table->integer('protect');
+            $table->integer('empower');
             $table->timestamps();
         });
     }
