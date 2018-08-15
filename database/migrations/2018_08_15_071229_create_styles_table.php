@@ -15,6 +15,10 @@ class CreateStylesTable extends Migration
     {
         Schema::create('styles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->string('image');
+            $table->integer('count')->default(0);
             $table->timestamps();
         });
     }
