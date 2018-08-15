@@ -39,7 +39,20 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('home') }}">@lang('Admin Entry')</a>
             </li>
             @guest
-
+            <li class="nav-item dropdown mx-lg-1 pt-2">
+                <a id="langDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" v-pre>
+                    <strong id="locale">{{ app()->getLocale() }} </strong>
+                    <span class="caret"></span>
+                </a>   
+                <div class="dropdown-menu">
+                    @foreach (language()->allowed() as $code => $name)
+                    <span class="caret"></span>
+                    <span class="caret"></span>
+                    <a class="dropdown-item" href="{{ language()->back($code) }}">{{ $name }} </a>
+                    @endforeach
+                </div>
+            </li>
             @else
             <li class="nav-item mx-0 mx-lg-1 pt-2 dropdown">
                 <a id="navbarDropdown nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
