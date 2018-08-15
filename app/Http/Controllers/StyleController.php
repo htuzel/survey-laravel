@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Result;
+use App\Style;
 use Illuminate\Http\Request;
 
-class ResultController extends Controller
+class StyleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ResultController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Style  $style
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Style $style)
     {
         //
     }
@@ -52,10 +52,10 @@ class ResultController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Style  $style
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Style $style)
     {
         //
     }
@@ -64,10 +64,10 @@ class ResultController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Style  $style
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Style $style)
     {
         //
     }
@@ -75,10 +75,10 @@ class ResultController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Style  $style
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Style $style)
     {
         //
     }

@@ -15,6 +15,13 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',100);
+            $table->string('email',100);
+            $table->integer('group_id')->nullable();
+            $table->integer('motivation1_id');
+            $table->integer('motivation2_id');
+            $table->integer('motivation3_id');
+            $table->integer('style_id');
             $table->timestamps();
         });
     }

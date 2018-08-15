@@ -28,6 +28,15 @@
     <div class="container" id="form">
         <form method="POST" action="{{ route('form_evaluation_individual') }}">
             @csrf
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="row">
                 <div class="form-group col-12 col-md-6">
                     <label for="Email">@lang('Your Email')</label>
