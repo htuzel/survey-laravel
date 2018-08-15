@@ -44,7 +44,7 @@ class QuestionController extends Controller
         ]);
         $question = new Question;
         $question->question = $request->input('question');
-        $question->motivation = $request->input('motivation');
+        $question->motivation_id = $request->input('motivation');
         $question->style = $request->input('style');
         $question->lang = $request->input('language');
         $question->save();
@@ -92,7 +92,7 @@ class QuestionController extends Controller
         ]);
         $question = Question::find($id);
         $question->question = $request->input('question');
-        $question->motivation = $request->input('motivation');
+        $question->motivation_id = $request->input('motivation');
         $question->style = $request->input('style');
         $question->lang = $request->input('language');
         $question->save();

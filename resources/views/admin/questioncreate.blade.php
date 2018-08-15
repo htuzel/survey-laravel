@@ -30,18 +30,9 @@
                                     <div class="form-group col-md-4 col-12">
                                         <label for="motivation">@lang('Motivation')</label>
                                         <select class="form-control" id="motivation" name="motivation">
-                                            <option value="demystifier">@lang('Demystifier')</option>
-                                            <option value="watchdog">@lang('Watchdog')</option>
-                                            <option value="activist">@lang('Activist')</option>
-                                            <option value="professor">@lang('Professor')</option>
-                                            <option value="professional">@lang('Professional')</option>
-                                            <option value="teacher">@lang('Teacher')</option>
-                                            <option value="techie">@lang('Techie')</option>
-                                            <option value="spirit">@lang('Spirit')</option>
-                                            <option value="motivator">@lang('Motivator')</option>
-                                            <option value="trendsetter">@lang('Trendsetter')</option>
-                                            <option value="alt">@lang('Alt')</option>
-                                            <option value="tastemaker">@lang('TasteMaker')</option>
+                                            @foreach (App\Motivation::all() as $motivation)
+                                            <option value="{{ $motivation->id }}">@lang($motivation->name)</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4 col-12">

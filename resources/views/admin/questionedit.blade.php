@@ -31,18 +31,9 @@
                                     <div class="form-group col-md-4 col-12">
                                         <label for="motivation">@lang('Motivation')</label>
                                         <select class="form-control" id="motivation" name="motivation">
-                                            <option @if($question->motivation == "demystifier") selected @endif value="demystifier">@lang('Demystifier')</option>
-                                            <option @if($question->motivation == "watchdog") selected @endif value="watchdog">@lang('Watchdog')</option>
-                                            <option @if($question->motivation == "activist") selected @endif value="activist">@lang('Activist')</option>
-                                            <option @if($question->motivation == "professor") selected @endif value="professor">@lang('Professor')</option>
-                                            <option @if($question->motivation == "professional") selected @endif value="professional">@lang('Professional')</option>
-                                            <option @if($question->motivation == "teacher") selected @endif value="teacher">@lang('Teacher')</option>
-                                            <option @if($question->motivation == "techie") selected @endif value="techie">@lang('Techie')</option>
-                                            <option @if($question->motivation == "spirit") selected @endif value="spirit">@lang('Spirit')</option>
-                                            <option @if($question->motivation == "motivator") selected @endif value="motivator">@lang('Motivator')</option>
-                                            <option @if($question->motivation == "trendsetter") selected @endif value="trendsetter">@lang('Trendsetter')</option>
-                                            <option @if($question->motivation == "alt") selected @endif value="alt">@lang('Alt')</option>
-                                            <option @if($question->motivation == "tastemaker") selected @endif value="tastemaker">@lang('TasteMaker')</option>
+                                            @foreach (App\Motivation::all() as $motivation)
+                                            <option value="{{ $motivation->id }}" @if($motivation->id == $question->motivation_id) selected @endif >@lang($motivation->name)</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4 col-12">

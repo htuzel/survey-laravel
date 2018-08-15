@@ -29,7 +29,7 @@
                                         <tr>
                                             <td scope="row">{{ $question->id }}</th>
                                             <td>{{ $question->question }}</td>
-                                            <td style="text-transform: capitalize">{{ $question->motivation }}</td>
+                                            <td style="text-transform: capitalize">{{ App\Motivation::find($question->motivation_id)->name }}</td>
                                             <td style="text-transform: capitalize">{{ $question->style }}</td>
                                             <td style="text-transform: capitalize">{{ $question->lang }}</td>
                                             <td>

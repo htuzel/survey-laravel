@@ -17,7 +17,7 @@ class CreateStylesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('count')->default(0);
             $table->timestamps();
         });
