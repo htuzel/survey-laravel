@@ -28,17 +28,38 @@
     <div class="container" id="form">
         <form method="POST" action="{{ route('form_evaluation_group') }}">
             @csrf
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            @if(session('alert'))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{{ session('alert') }}</li>
+                </ul>
+            </div>
+            @endif
             <div class="row">
-                <div class="form-group col-12 col-md-2">
+                <div class="form-group col-12 col-md-6">
+                    <label for="groupName">@lang('Group Name')</label>
+                    <input type="text" class="form-control" name="group_name" id="groupName" placeholder="Group Name.." required>
+                    <small class="form-text text-muted">@lang('Please type the group name provided by your instructor.')</small>
+                </div>
+                <div class="form-group col-12 col-md-6">
                     <label for="groupPin">@lang('Group Pin')</label>
                     <input type="password" class="form-control" name="pin" id="groupPin" placeholder="Group Pin.." required>
                     <small class="form-text text-muted">@lang('Please type the group pin provided by your instructor.')</small>
                 </div>
-                <div class="form-group col-12 col-md-5">
+                <div class="form-group col-12 col-md-6">
                     <label for="Email">@lang('Your Email')</label>
                     <input type="email" class="form-control" name="email" id="Email" placeholder="Your Email.." required>
                 </div>
-                <div class="form-group col-12 col-md-5">
+                <div class="form-group col-12 col-md-6">
                     <label for="Name">@lang('Your Name')</label>
                     <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name..">
                 </div>
@@ -58,19 +79,22 @@
                 </div>
             </div>
             <hr>
+            <?php $count = 1 ?>
             @foreach ($questions as $question)
                 <div class="form-group row">
                     <div class="col-md-5 col-12">
-                        {{ $question->question }}
+                        <strong>{{ $count }} - </strong>  {{ $question->question }}
                     </div>
                     <div class="col-md-7 col-12">
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="1" > </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="2" > </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="3" checked> </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="4" ></label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer_{{ $question->id }}" value="5" ></label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="1" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="2" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="3" checked> </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="4" ></label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="5" ></label>
                     </div>
                 </div>
+                <hr>
+                <?php $count++ ?>
             @endforeach
             <div class="form-group row my-5">
                 <div class="col-md-6 offset-md-10 offset-8">

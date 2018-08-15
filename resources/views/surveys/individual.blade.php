@@ -37,6 +37,13 @@
                 </ul>
             </div>
             @endif
+            @if(session('alert'))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{{ session('alert') }}</li>
+                </ul>
+            </div>
+            @endif
             <div class="row">
                 <div class="form-group col-12 col-md-6">
                     <label for="Email">@lang('Your Email')</label>
@@ -62,10 +69,11 @@
                 </div>
             </div>
             <hr>
+            <?php $count = 1 ?>
             @foreach ($questions as $question)
                 <div class="form-group row">
                     <div class="col-md-5 col-12">
-                        {{ $question->question }}
+                        <strong>{{ $count }} - </strong>  {{ $question->question }}
                     </div>
                     <div class="col-md-7 col-12">
                         <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="1" > </label>
@@ -76,6 +84,7 @@
                     </div>
                 </div>
                 <hr>
+                <?php $count++ ?>
             @endforeach
             <div class="form-group row my-5">
                 <div class="col-md-6 offset-md-10 offset-8">
