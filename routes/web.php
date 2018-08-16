@@ -32,6 +32,7 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('results', 'ResultController');
         Route::get('/results-group', 'ResultController@group')->name('group_results');
         Route::get('group/{id}/result', 'ResultController@groupDetail' )->name('group_result_detail');
+        Route::get('/export', 'ResultController@export')->name('download_results');
 
     });
 

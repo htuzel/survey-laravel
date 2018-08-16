@@ -223,8 +223,8 @@
             $spirit_guide_t++;
         elseif (key($top) == "taste_maker")
             $taste_maker_t++;
-        elseif (key($top) == "taste_maker")
-            $taste_maker_t++;
+        elseif (key($top) == "watchdog")
+            $watchdog_t++;
         elseif (key($top) == "teacher")
             $teacher_t++;
         elseif (key($top) == "techie")
@@ -287,12 +287,12 @@ new Chart(document.getElementById("IndResChart"), {
         labels: ['Activist', 'Alt', 'Demystifier', 'Motivator', 'Professional','Professor','Spirit Guide','Taste Maker','Teacher 2.0','Techie','Trendsetter','Watchdog'],
         datasets: [
         {
-            label: "1950",
+            label: "Total point",
             fill: true,
-            backgroundColor: "rgba(179,181,198,0.2)",
-            borderColor: "rgba(179,181,198,1)",
+            backgroundColor: "rgba(255, 99, 132, 0.6)",
+            borderColor: "rgba(255, 99, 132, 1)",
             pointBorderColor: "#fff",
-            pointBackgroundColor: "rgba(179,181,198,1)",
+            pointBackgroundColor: "rgba(255, 99, 132, 1)",
             data: [
                 {{ $activist_i}},
                 {{ $alt_i}},
@@ -313,8 +313,13 @@ new Chart(document.getElementById("IndResChart"), {
     options: {
       title: {
         display: true,
-        text: 'Distribution in % of world population'
-      }
+        text: 'Total Motivation Points of this group'
+      },
+      scale: {
+			ticks: {
+				beginAtZero: true
+			}
+		}
     }
 });
 //**************************************************************************************

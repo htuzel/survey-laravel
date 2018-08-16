@@ -55,7 +55,7 @@
             </ul>
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">@lang('Download Results')</a>
+                    <a href="/export" class="download">@lang('Download Results')</a>
                 </li>
                 <li>
                     <a href="/" class="article">@lang('Back to Home')</a>

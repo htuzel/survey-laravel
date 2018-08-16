@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Result;
+use App\Exports\ResultsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -34,6 +37,13 @@ class ResultController extends Controller
         $results = Result::where('group_id',$id)->get();
         return view('admin.groupresultsdetail')->with('results',$results);
     }
+
+
+    public function export()
+    {
+        return Excel::download(new ResultsExport, 'results.xlsx');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

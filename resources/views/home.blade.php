@@ -141,8 +141,8 @@
             $spirit_guide_t++;
         elseif (key($top) == "taste_maker")
             $taste_maker_t++;
-        elseif (key($top) == "taste_maker")
-            $taste_maker_t++;
+        elseif (key($top) == "watchdog")
+            $watchdog_t++;
         elseif (key($top) == "teacher")
             $teacher_t++;
         elseif (key($top) == "techie")

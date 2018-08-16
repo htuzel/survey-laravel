@@ -34,8 +34,13 @@
                                                 <span>
                                                     <button onclick="edit('{{ $group->id  }}')" type="button" class="btn btn-link text-warning p-0">@lang('Edit')</button>
                                                 </span>
+                                                |
                                                 <span>
                                                     <button onclick="delete_group('{{ $group->id  }}')" type="button" class="btn btn-link text-danger p-0">@lang('Delete')</button>
+                                                </span>
+                                                |
+                                                <span>
+                                                    <button onclick="location.href='{{ route('group_result_detail', ['id' => $group->id ]) }}';" type="button" class="btn btn-link text-info p-0">@lang('View Group`s Results')</button>
                                                 </span>
                                             </td>
                                         </tr>
