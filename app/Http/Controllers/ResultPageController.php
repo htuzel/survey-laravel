@@ -52,7 +52,7 @@ class ResultPageController extends Controller
             'name' => 'required|max:1000',
             'email' => 'required|max:1000|email',
         ]);
-        $group = Group::where('name',$request->input('name'))->where('pin',$request->input('pin'))->first();
+        $group = Group::where('name',$request->input('group_name'))->where('pin',$request->input('pin'))->first();
         if($group == null)
         {
             return redirect()->route("group_survey")->with('alert', Lang::get('Please provide a valid group name and pin.'));
@@ -60,6 +60,7 @@ class ResultPageController extends Controller
         $result = new Result();
         $result->name = $request->input('name');
         $result->email = $request->input('email');
+        $result->group_id = $group->id;
         $result->demystifier  = $request->input('answer.1') + $request->input('answer.2') + $request->input('answer.25') + $request->input('answer.26');
         $result->watchdog     = $request->input('answer.3') + $request->input('answer.4') + $request->input('answer.27') + $request->input('answer.28');
         $result->activist     = $request->input('answer.5') + $request->input('answer.6') + $request->input('answer.29') + $request->input('answer.30');

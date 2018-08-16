@@ -69,7 +69,7 @@
     function delete_group(id) {
         swal({
                 title: "@lang('Are you sure')",
-                text: " @lang('The deletion process will have serious consequences') " + "@lang('If you delete the group, you will not be able to bring it back')",
+                text: " @lang('The deletion process will have serious consequences') " + "@lang('If you delete the group, you will not be able to bring it and it`s results back')",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,

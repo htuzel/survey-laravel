@@ -14,9 +14,20 @@ class ResultController extends Controller
      */
     public function index()
     {
-        //
+        $results = Result::where('group_id',null)->simplePaginate(100);
+        return view('admin.individualresults')->with('results',$results);
     }
 
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function group()
+    {
+        $results = Result::whereNotNull('group_id')->simplePaginate(100);
+        return view('admin.groupresults')->with('results',$results);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -80,6 +91,12 @@ class ResultController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = Result::find($id);
+        try{
+            $result->delete();
+            return "successfully deleted";
+        }catch(Exception $e){
+            return "unsuccesfully deleted";
+        }
     }
 }

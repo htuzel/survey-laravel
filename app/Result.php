@@ -27,4 +27,23 @@ class Result extends Model
         return $results;
 
     }
+
+    public function top() {
+        $results = array(
+            "activist" => $this->activist,
+            "alt" => $this->alt,
+            "demystifier" => $this->demystifier,
+            "motivator" => $this->motivator,
+            "professional" => $this->professional,
+            "professor" => $this->professor,
+            "spirit_guide" => $this->spirit_guide,
+            "taste_maker" => $this->taste_maker,
+            "teacher" => $this->teacher,
+            "techie" => $this->techie,
+            "trendsetter" => $this->trendsetter,
+            "watchdog" => $this->watchdog,
+        );
+
+        return max($results);
+    }
 }

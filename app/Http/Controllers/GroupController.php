@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Group;
+use App\Result;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -107,8 +108,12 @@ class GroupController extends Controller
     public function destroy($id)
     {
         $group = Group::find($id);
+        $results = Result::where('group_id',$id)->get();
         try{
             $group->delete();
+            foreach ($results as $result) {
+                $result->delete();
+            }
             return "successfully deleted";
         }catch(Exception $e){
             return "unsuccesfully deleted";

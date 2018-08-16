@@ -21,6 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/js/sortable.min.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
 
 </head>
@@ -33,7 +34,7 @@
                 <h3>Media Education Lab</h3>
             </div>
             <ul class="list-unstyled components">
-                <p>Admin Panel</p>
+                <a href="/home"><p>@lang("Admin Panel")</p></a>
                 <li id="groups_menu">
                     <a href="/groups">@lang("Groups")</a>
                 </li>
@@ -41,10 +42,10 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@lang('Results')</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">@lang('Individual Results')</a>
+                            <a href="/results">@lang('Individual Results')</a>
                         </li>
                         <li>
-                            <a href="#">@lang('Group Results')</a>
+                            <a href="/results-group">@lang('Group Results')</a>
                         </li>
                     </ul>
                 </li>

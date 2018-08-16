@@ -29,7 +29,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::get('/home', 'HomeController@index')->name('home');
         Route::resource('questions', 'QuestionController');
         Route::resource('groups', 'GroupController');
-
+        Route::resource('results', 'ResultController');
+        Route::get('/results-group', 'ResultController@group')->name('group_results');
     });
 
 });
