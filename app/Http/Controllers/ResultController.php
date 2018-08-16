@@ -28,6 +28,12 @@ class ResultController extends Controller
         $results = Result::whereNotNull('group_id')->simplePaginate(100);
         return view('admin.groupresults')->with('results',$results);
     }
+
+    public function groupDetail($id)
+    {
+        $results = Result::where('group_id',$id)->get();
+        return view('admin.groupresultsdetail')->with('results',$results);
+    }
     /**
      * Show the form for creating a new resource.
      *

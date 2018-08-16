@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    {{-- datatables.net --}}
     <div class="container-fluid mt-3">
         <div class="row justify-content-center">
             <div class="col-md-12">

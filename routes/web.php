@@ -31,6 +31,8 @@ Route::group(['middleware' => 'language'], function () {
         Route::resource('groups', 'GroupController');
         Route::resource('results', 'ResultController');
         Route::get('/results-group', 'ResultController@group')->name('group_results');
+        Route::get('group/{id}/result', 'ResultController@groupDetail' )->name('group_result_detail');
+
     });
 
 });

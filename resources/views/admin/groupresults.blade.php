@@ -57,6 +57,9 @@
                                                 <span>
                                                     <button onclick="delete_result('{{ $result->id  }}')" type="button" class="btn btn-link text-danger p-0"><small  style="font-size:0.8em">@lang('Delete')</small></button>
                                                 </span>
+                                                <span>
+                                                    <button onclick="location.href='{{ route('group_result_detail', ['id' => $result->group_id]) }}';" type="button" class="btn btn-link text-info p-0"><small  style="font-size:0.8em">@lang('View')</small></button>
+                                                </span>
                                             </td>
                                         </tr>
                                   @endforeach

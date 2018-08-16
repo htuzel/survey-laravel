@@ -38,7 +38,7 @@
             <div class="col-md-6 col-sm-6 col-12">
                 <div class="card">
                     <div class="card-header">
-                        @lang('Motivation')
+                        @lang('Top Motivations')
                     </div>
                     <div class="card-body">
                         <canvas id="topMotivations" width="400" height="400"></canvas>
