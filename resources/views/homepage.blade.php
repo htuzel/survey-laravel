@@ -8,67 +8,15 @@
         <div class="col">
             <!-- Set up your HTML -->
             <div id="owl-demo" class="owl-carousel owl-theme owl-loaded">
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal1" style="background-image: url(../images/banner1.png);">
-                	<div class="hvrbox-layer_top">
-                		<div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                	</div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal2" style="background-image: url(../images/banner2.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
+                @foreach ($motivations as $motivation)
+                    <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal{{ $motivation->id }}" style="background-image: url(../images/banner{{ $motivation->id }}.png);">
+                        <i  class="owl-left fas fa-chevron-left fa-2x"></i>
+                        <i  class="owl-right fas fa-chevron-right fa-2x"></i>
+                        <div class="hvrbox-layer_top">
+                    		<div class="hvrbox-text"><i class="fa fa-search fa-5x"></i> </div>
+                    	</div>
                     </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal3" style="background-image: url(../images/banner3.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal4" style="background-image: url(../images/banner4.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal5" style="background-image: url(../images/banner5.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal6" style="background-image: url(../images/banner6.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal7" style="background-image: url(../images/banner7.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal8" style="background-image: url(../images/banner8.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal9" style="background-image: url(../images/banner9.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal10" style="background-image: url(../images/banner10.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal11" style="background-image: url(../images/banner11.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-                <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal12" style="background-image: url(../images/banner12.png);">
-                    <div class="hvrbox-layer_top">
-                        <div class="hvrbox-text"><i class="fa fa-info fa-5x"></i> </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </div>
@@ -84,21 +32,46 @@
 
     </section>
 
+@foreach ($motivations as $motivation)
+
+
  <!-- The Modal1 -->
- <div class="modal fade" id="myModal1">
+ <div class="modal fade" id="myModal{{ $motivation->id }}">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title font-weight-bold">@lang('Taste Maker')</h4>
+          <h4 class="modal-title font-weight-bold">@lang(App\Motivation::find($motivation->id)->name)</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-            <h5 class="text-secondary font-weight-bold" style="font-family: 'Titillium Web', sans-serif;">@lang('Description')</h5>
+            <h5 class="text-secondary mb-0 font-weight-bold" style="font-family: 'Titillium Web', sans-serif;">@lang('Description')</h5>
             <hr>
+            <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find(8)->name)">
+            <div class="clearfix">@lang(App\Motivation::find($motivation->id)->description)</div>
+            <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Protect')</h5>
+            <hr>
+            <ul>
+                <li>@lang(App\Motivation::find($motivation->id)->protect1)</li>
+                <li>@lang(App\Motivation::find($motivation->id)->protect2)</li>
+                <li>@lang(App\Motivation::find($motivation->id)->protect3)</li>
+            </ul>
+            <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Empower')</h5>
+            <hr>
+            <ul>
+                <li>@lang(App\Motivation::find($motivation->id)->empower1)</li>
+                <li>@lang(App\Motivation::find($motivation->id)->empower2)</li>
+                <li>@lang(App\Motivation::find($motivation->id)->empower3)</li>
+            </ul>
+            <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Strenghts')</h5>
+            <hr>
+            @lang(App\Motivation::find($motivation->id)->strenghts)
+            <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Challenges')</h5>
+            <hr>
+            @lang(App\Motivation::find($motivation->id)->challenges)
         </div>
 
         <!-- Modal footer -->
@@ -109,279 +82,8 @@
       </div>
     </div>
   </div>
-
-  <!-- The Modal2 -->
- <div class="modal fade" id="myModal2">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
 </div>
-
-<!-- The Modal3 -->
-<div class="modal fade" id="myModal3">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- The Modal4 -->
-<div class="modal fade" id="myModal4">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- The Modal5 -->
-<div class="modal fade" id="myModal5">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- The Modal6 -->
-<div class="modal fade" id="myModal6">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div><!-- The Modal7 -->
-<div class="modal fade" id="myModal7">
-   <div class="modal-dialog modal-lg">
-     <div class="modal-content">
-
-       <!-- Modal Header -->
-       <div class="modal-header">
-         <h4 class="modal-title">Modal Heading</h4>
-         <button type="button" class="close" data-dismiss="modal">&times;</button>
-       </div>
-
-       <!-- Modal body -->
-       <div class="modal-body">
-         Modal body..
-       </div>
-
-       <!-- Modal footer -->
-       <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       </div>
-
-     </div>
-   </div>
- </div>
-
- <!-- The Modal8 -->
-<div class="modal fade" id="myModal8">
- <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-
-     <!-- Modal Header -->
-     <div class="modal-header">
-       <h4 class="modal-title">Modal Heading</h4>
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-     </div>
-
-     <!-- Modal body -->
-     <div class="modal-body">
-       Modal body..
-     </div>
-
-     <!-- Modal footer -->
-     <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     </div>
-
-   </div>
- </div>
-</div>
-
-<!-- The Modal9 -->
-<div class="modal fade" id="myModal9">
- <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-
-     <!-- Modal Header -->
-     <div class="modal-header">
-       <h4 class="modal-title">Modal Heading</h4>
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-     </div>
-
-     <!-- Modal body -->
-     <div class="modal-body">
-       Modal body..
-     </div>
-
-     <!-- Modal footer -->
-     <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     </div>
-
-   </div>
- </div>
-</div>
-
-<!-- The Modal13 -->
-<div class="modal fade" id="myModal13">
- <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-
-     <!-- Modal Header -->
-     <div class="modal-header">
-       <h4 class="modal-title">Modal Heading</h4>
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-     </div>
-
-     <!-- Modal body -->
-     <div class="modal-body">
-       Modal body..
-     </div>
-
-     <!-- Modal footer -->
-     <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     </div>
-
-   </div>
- </div>
-</div>
-
-<!-- The Modal11 -->
-<div class="modal fade" id="myModal11">
- <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-
-     <!-- Modal Header -->
-     <div class="modal-header">
-       <h4 class="modal-title">Modal Heading</h4>
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-     </div>
-
-     <!-- Modal body -->
-     <div class="modal-body">
-       Modal body..
-     </div>
-
-     <!-- Modal footer -->
-     <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     </div>
-
-   </div>
- </div>
-</div>
-
-<!-- The Modal12 -->
-<div class="modal fade" id="myModal12">
- <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-
-     <!-- Modal Header -->
-     <div class="modal-header">
-       <h4 class="modal-title">Modal Heading</h4>
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-     </div>
-
-     <!-- Modal body -->
-     <div class="modal-body">
-       Modal body..
-     </div>
-
-     <!-- Modal footer -->
-     <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-     </div>
-
-   </div>
- </div>
-</div>
+@endforeach
 <script>
 $(document).ready(function() {
 
@@ -393,6 +95,7 @@ $(document).ready(function() {
     autoplayTimeout:2400,
     autoplayHoverPause:true,
     dots: true,
+    loop:true,
 });
 
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Motivation;
 use App;
 
 class RouteController extends Controller
@@ -11,7 +12,8 @@ class RouteController extends Controller
     //return home page views
     public function home()
     {
-        return view('homepage');
+        $motivations = Motivation::all();
+        return view('homepage')->with('motivations',$motivations);
     }
 
     //return individual forms page views
