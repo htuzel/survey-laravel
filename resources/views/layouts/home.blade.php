@@ -20,18 +20,18 @@
 
   <body id="page-top">
 
-    
-    
+
+
 <!-- Header -->
     <div class="container-fluid ">
-        
-     <header class="row">
+
+    <header class="row">
 
       <div class="col bg-dark text-center">
-       <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
-        <img src="images/mediaicons.png" alt="Media Education Lab" style="width:70px;height:70px">
-       </a>
-       <a href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
+        <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
+          <img src="images/mediaicons.png" alt="Media Education Lab" style="width:70px;height:70px">
+        </a>
+        <a href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
       </div>
 
     </header>
@@ -43,13 +43,13 @@
 
          <ul class="navbar-nav">
 
-         <li class="nav-item pr-5">
-          <a class="nav-link" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
-         </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
+          </li>
 
-         <li class="nav-item pr-5">
-          <a class="nav-link" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
-         </li>
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
+          </li>
 
         @guest
 
@@ -65,7 +65,6 @@
             <span class="caret"></span>
             <a class="dropdown-item" href="{{ language()->back($code) }}">{{ $name }} </a>
             @endforeach
-           </div>
          </li>
 
         @else
@@ -89,11 +88,9 @@
         @endguest
 
         </ul>
-      </div> 
-    </nav> <!--nav terminated-->
-
-</div> <!--container fluid terminated-->
-
+      </div>
+    </nav>
+   </div>
 
     @yield('content')
 
