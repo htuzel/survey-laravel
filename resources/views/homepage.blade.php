@@ -9,7 +9,7 @@
             <!-- Set up your HTML -->
             <div id="owl-demo" class="owl-carousel owl-theme owl-loaded">
                 @foreach ($motivations as $motivation)
-                    <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal{{ $motivation->id }}" style="background-image: url(../images/banner{{ $motivation->id }}.png);">
+                    <div class="hvrbox hvrbox_background item" data-toggle="modal" data-target="#myModal{{ $motivation->id }}" style="background-size: contain; background-image: url(../images/banner{{ $motivation->id }}.png);">
                         <i  class="owl-left fas fa-chevron-left fa-2x"></i>
                         <i  class="owl-right fas fa-chevron-right fa-2x"></i>
                         <div class="hvrbox-layer_top">
@@ -50,7 +50,7 @@
         <div class="modal-body">
             <h5 class="text-secondary mb-0 font-weight-bold" style="font-family: 'Titillium Web', sans-serif;">@lang('Description')</h5>
             <hr>
-            <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find(8)->name)">
+            <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find(8)->name)" style="max-width:50%">
             <div class="clearfix">@lang(App\Motivation::find($motivation->id)->description)</div>
             <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Protect')</h5>
             <hr>
