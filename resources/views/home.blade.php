@@ -201,89 +201,47 @@ var userChart = new Chart(ctx, {
 //**************************************************************************************
 //RESULT CHART
 //**************************************************************************************
-var color = Chart.helpers.color;
-var config = {
-	type: 'radar',
-	data: {
-		labels: ['Activist', 'Alt', 'Demystifier', 'Motivator', 'Professional','Professor','Spirit Guide','Taste Maker','Teacher 2.0','Techie','Trendsetter','Watchdog'],
-		datasets: [{
-			label: 'Individual Results',
-			backgroundColor: color('rgba(54, 162, 235, 1)').alpha(0.2).rgbString(),
-			borderColor: 'rgba(54, 162, 235, 1)',
-			pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
-			data: [
-                {{ $activist_i}},
-                {{ $alt_i}},
-                {{ $demystifier_i}},
-                {{ $motivator_i}},
-                {{ $professional_i}},
-                {{ $professor_i}},
-                {{ $spirit_guide_i}},
-                {{ $taste_maker_i}},
-                {{ $teacher_i}},
-                {{ $techie_i}},
-                {{ $trendsetter_i}},
-                {{ $watchdog_i}}
-			]
-		}, {
-			label: 'Group Results',
-			backgroundColor: color('rgba(255, 206, 86, 1)').alpha(0.2).rgbString(),
-			borderColor: 'rgba(255, 206, 86, 1)',
-			pointBackgroundColor: 'rgba(255, 206, 86, 0.2)',
-			data: [
-                {{ $activist_g}},
-                {{ $alt_g}},
-                {{ $demystifier_g}},
-                {{ $motivator_g}},
-                {{ $professional_g}},
-                {{ $professor_g}},
-                {{ $spirit_guide_g}},
-                {{ $taste_maker_g}},
-                {{ $teacher_g}},
-                {{ $techie_g}},
-                {{ $trendsetter_g}},
-                {{ $watchdog_g}}
-			]
-        }, {
-            label: 'Total Results',
-			backgroundColor: color('rgba(255, 99, 132, 1)').alpha(0.2).rgbString(),
-			borderColor: 'rgba(255, 99, 132, 1)',
-			pointBackgroundColor: 'rgba(255, 99, 132, 0.2)',
-			data: [
-                {{ $activist_g + $activist_i}},
-                {{ $alt_g + $alt_i}},
-                {{ $demystifier_g + $demystifier_i}},
-                {{ $motivator_g + $motivator_i}},
-                {{ $professional_g + $professional_i}},
-                {{ $professor_g + $professor_i}},
-                {{ $spirit_guide_g + $spirit_guide_i}},
-                {{ $taste_maker_g + $taste_maker_i}},
-                {{ $teacher_g + $teacher_i}},
-                {{ $techie_g + $techie_i}},
-                {{ $trendsetter_g + $trendsetter_i}},
-                {{ $watchdog_g + $watchdog_i}}
+new Chart(document.getElementById("IndResChart"), {
+    type: 'radar',
+    data: {
+        labels: ['Activist', 'Alt', 'Demystifier', 'Motivator', 'Professional','Professor','Spirit Guide','Taste Maker','Teacher 2.0','Techie','Trendsetter','Watchdog'],
+        datasets: [
+        {
+            label: "Total point",
+            fill: true,
+            backgroundColor: "rgba(255, 99, 132, 0.6)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(255, 99, 132, 1)",
+            data: [
+                {{ $activist_i +  $activist_g}},
+                {{ $alt_i +  $alt_g}},
+                {{ $demystifier_i +  $demystifier_g}},
+                {{ $motivator_i +  $motivator_g}},
+                {{ $professional_i +  $professional_g}},
+                {{ $professor_i +  $professor_g}},
+                {{ $spirit_guide_i + $spirit_guide_g}},
+                {{ $taste_maker_i + $taste_maker_g}},
+                {{ $teacher_i + $teacher_g}},
+                {{ $techie_i + $teacher_g}},
+                {{ $trendsetter_i + $trendsetter_g}},
+                {{ $watchdog_i + $watchdog_g}}
             ]
         }
-    ]
-	},
-	options: {
-		legend: {
-			position: 'top',
-		},
-		title: {
-			display: true,
-			text: 'Results '
-		},
-		scale: {
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Total Motivation Points of this group'
+      },
+      scale: {
 			ticks: {
 				beginAtZero: true
 			}
 		}
-	}
-};
-window.onload = function() {
-	window.myRadar = new Chart(document.getElementById('IndResChart'), config);
-};
+    }
+});
 //**************************************************************************************
 //STYLE CHART
 //**************************************************************************************

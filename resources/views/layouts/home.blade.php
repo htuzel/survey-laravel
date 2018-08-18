@@ -11,9 +11,11 @@
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
     <script src="{{ asset('js/app.js') }}"></script>
   </head>
@@ -25,7 +27,7 @@
 <!-- Header -->
     <div class="container-fluid ">
 
-    <header class="row">
+     <header class="row">
 
       <div class="col bg-dark text-center">
         <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
@@ -89,8 +91,11 @@
 
         </ul>
       </div>
-    </nav>
-   </div>
+
+    </nav> <!--nav terminated-->
+
+</div> <!--container fluid terminated-->
+
 
     @yield('content')
 
@@ -164,6 +169,7 @@
     <!-- Plugin JavaScript -->
     <script src="{{ asset('js/external_js_files/jquery.easing.js') }}"></script>
     <script src="{{ asset('js/external_js_files/freelancer.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
 
