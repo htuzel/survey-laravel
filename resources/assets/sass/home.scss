@@ -12,3 +12,53 @@
 //Homepage Css
 @import '../css/homepage.css';
 
+//header
+header div a:nth-child(2){
+    font-size: 55px;
+    color:white;
+    text-decoration: none;
+
+    &:hover { color:rgb(226, 130, 21);}
+}
+header div a img{
+    &:hover{transform: scale(1.2,1.2);}
+}
+
+//navigation
+.nav-item a{
+
+    font-size: 30px;
+    color:white;
+
+    &:hover { color:rgb(226, 130, 21);}
+}
+.nav-item .dropdown-menu a{
+    font-size: 20px;
+    color:#343A40;
+    background-color:white;
+}
+
+//main
+section a img {
+    &:hover{transform: scale(1.2,1.2);}
+}
+
+//placed info icon top-right of motivation image
+section a img{
+    position: relative;
+}
+
+section a i{
+    position:absolute;
+    z-index: 999;
+    bottom: 140%;
+    left: 85%;
+    font-size:13px;
+    color:black;
+}
+
+//section background
+section {
+    background-color: rgb(161, 113, 65); 
+}
+
