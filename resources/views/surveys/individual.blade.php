@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('content')
-<?php $motivations = App\Motivation::all() ?>
+<?php $motivations = App\Motivation::all(); ?>
 <div class="container mt-5">
     <div class="header text-center">
         <h1 class="myheadings">@lang('Learn your Media Education Motivation')</h1>

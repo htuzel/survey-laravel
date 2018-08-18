@@ -27,8 +27,6 @@ mix.webpackConfig( {
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .js('resources/assets/js/external_files/freelancer.js', 'public/js/external_js_files')
-   .js('resources/assets/js/external_files/jquery.easing.js', 'public/js/external_js_files')
    .js('resources/assets/js/external_files/results.js', 'public/js/external_js_files')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/home.scss', 'public/css')

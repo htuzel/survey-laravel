@@ -17,7 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
+
+
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   </head>
 
   <body id="page-top">
@@ -166,9 +169,7 @@
 
 
 
-    <!-- Plugin JavaScript -->
-    <script src="{{ asset('js/external_js_files/jquery.easing.js') }}"></script>
-    <script src="{{ asset('js/external_js_files/freelancer.js') }}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 

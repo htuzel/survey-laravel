@@ -42,7 +42,7 @@ class ResultPageController extends Controller
                             $request->input('answer.41') + $request->input('answer.42') + $request->input('answer.43') + $request->input('answer.44') +
                             $request->input('answer.45') + $request->input('answer.46') + $request->input('answer.47') + $request->input('answer.48');
         $result->save();
-        return view('surveys.results')->with('results',$result->sort());
+        return view('surveys.results')->with('result',$result)->with('results',$result->sort());
     }
 
     public function group(Request $request) {
@@ -86,6 +86,6 @@ class ResultPageController extends Controller
                             $request->input('answer.41') + $request->input('answer.42') + $request->input('answer.43') + $request->input('answer.44') +
                             $request->input('answer.45') + $request->input('answer.46') + $request->input('answer.47') + $request->input('answer.48');
         $result->save();
-        return view('surveys.results')->with('results',$result->sort());
+        return view('surveys.results')->with('result',$result)->with('results',$result->sort());
     }
 }
