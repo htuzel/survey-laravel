@@ -20,63 +20,79 @@
 
   <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          @lang('Menu')
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('home') }}">@lang('Admin Entry')</a>
-            </li>
-            @guest
-            <li class="nav-item dropdown mx-lg-1 pt-2">
-                <a id="langDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    <strong id="locale">{{ app()->getLocale() }} </strong>
-                    <span class="caret"></span>
-                </a>
-                <div class="dropdown-menu">
-                    @foreach (language()->allowed() as $code => $name)
-                    <span class="caret"></span>
-                    <span class="caret"></span>
-                    <a class="dropdown-item" href="{{ language()->back($code) }}">{{ $name }} </a>
-                    @endforeach
-                </div>
-            </li>
-            @else
-            <li class="nav-item mx-0 mx-lg-1 pt-2 dropdown">
-                <a id="navbarDropdown nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+    
+    
+<!-- Header -->
+    <div class="container-fluid ">
+        
+     <header class="row">
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        @endguest
-          </ul>
-        </div>
+      <div class="col bg-dark text-center">
+       <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
+        <img src="images/mediaicons.png" alt="Media Education Lab" style="width:70px;height:70px">
+       </a>
+       <a href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
       </div>
-    </nav>
+
+    </header>
+
+<!-- Navigation -->
+     <nav class="row">
+
+      <div class="col bg-dark navbar navbar-expand-md justify-content-center">
+
+         <ul class="navbar-nav">
+
+         <li class="nav-item pr-5">
+          <a class="nav-link" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
+         </li>
+
+         <li class="nav-item pr-5">
+          <a class="nav-link" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
+         </li>
+
+        @guest
+
+         <li class="nav-item dropdown dropright text-capitalize">
+          <a class="nav-link dropdown-toggle" id="navbardrop"  href="#" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" v-pre>
+          <strong id="locale">{{ app()->getLocale() }} </strong>
+          <span class="caret"></span>
+          </a>
+           <div class="dropdown-menu ">
+            @foreach (language()->allowed() as $code => $name)
+            <span class="caret"></span>
+            <span class="caret"></span>
+            <a class="dropdown-item" href="{{ language()->back($code) }}">{{ $name }} </a>
+            @endforeach
+           </div>
+         </li>
+
+        @else
+
+         <li class="nav-item dropdown dropright text-capitalize">
+           <a class="nav-link dropdown-toggle" id="navbardrop"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ Auth::user()->name }} <span class="caret"></span>
+           </a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+           </a>
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+             @csrf
+           </form>
+           </div>
+         </li>
+
+        @endguest
+
+        </ul>
+      </div> 
+    </nav> <!--nav terminated-->
+
+</div> <!--container fluid terminated-->
 
 
     @yield('content')

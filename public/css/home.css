@@ -10838,3 +10838,55 @@ a.text-dark:focus {
   }
 }
 
+header div a:nth-child(2) {
+  font-size: 55px;
+  color: white;
+  text-decoration: none;
+}
+
+header div a:nth-child(2):hover {
+  color: #e28215;
+}
+
+header div a img:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.nav-item a {
+  font-size: 30px;
+  color: white;
+}
+
+.nav-item a:hover {
+  color: #e28215;
+}
+
+.nav-item .dropdown-menu a {
+  font-size: 20px;
+  color: #343A40;
+  background-color: white;
+}
+
+section a img:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+section a img {
+  position: relative;
+}
+
+section a i {
+  position: absolute;
+  z-index: 999;
+  bottom: 140%;
+  left: 85%;
+  font-size: 13px;
+  color: black;
+}
+
+section {
+  background-color: #a17141;
+}
+
