@@ -19,6 +19,10 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
 
+    <!-- SEO -->
+    <meta name="description" content="Measure your digital media and literacy skills. Use our free measurement immediately. Learn your digital motivation instantly.">
+    <meta name="keywords" content="Digital Motivation, Digital Literacy, Media Literacy, Media Education, Media Education Lab, Renee Hobbs, Sait Tüzel">
+    <meta name="author" content="Hayreddin Tüzel">
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
