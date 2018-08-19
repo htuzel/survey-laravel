@@ -33,7 +33,7 @@
             <div class="modal-body">
                 <h5 class="text-secondary mb-0 font-weight-bold" style="font-family: 'Titillium Web', sans-serif;">@lang('Description')</h5>
                 <hr>
-                <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find(8)->name)" style="max-width:50%">
+                <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find($motivation->id)->name)" style="max-width:50%">
                 <div class="clearfix">@lang(App\Motivation::find($motivation->id)->description)</div>
                 <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Protect')</h5>
                 <hr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Question;
 use App\Motivation;
+use App\Reference;
 use App;
 
 class RouteController extends Controller
@@ -13,7 +14,8 @@ class RouteController extends Controller
     public function home()
     {
         $motivations = Motivation::all();
-        return view('homepage')->with('motivations',$motivations);
+        $references = Reference::all();
+        return view('homepage')->with('motivations',$motivations)->with('references',$references);
     }
 
     //return individual forms page views

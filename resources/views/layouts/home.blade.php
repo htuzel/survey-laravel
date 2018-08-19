@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
 
 
     <script src="{{ asset('js/app.js') }}"></script>
@@ -34,7 +34,7 @@
 
       <div class="col bg-dark text-center">
         <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
-          <img src="images/mediaicons.png" alt="Media Education Lab" style="width:70px;height:70px">
+          <img src="images/Quiz.png" alt="Media Education Lab" style="width:70px;height:70px">
         </a>
         <a href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
       </div>

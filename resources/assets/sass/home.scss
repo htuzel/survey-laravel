@@ -1,6 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web"');
 
 // Variables
 @import 'variables';
@@ -142,3 +143,24 @@ section {
     right:2%;
     top: 50%;
 }
+
+.boxshadow {-moz-box-shadow:3px 0 8px #999999; -webkit-box-shadow:3px 0 8px #999999; box-shadow:3px 0 8px #999999;}
+
+ul.learn-list { float:left; width:100%;}
+ul.learn-list li { display:block; float:left; width:356px; height:115px; background:#FFF; margin:8px 0 0 8px; border:solid 1px #bfbfbf;}
+ul.learn-list li:nth-child(odd) { margin-left:0;}
+ul.learn-list li a { display:block; float:left; width:356px; height:115px; color:#404040;}
+ul.learn-list li a:hover { background:url(../images/zoom.png) no-repeat right top;}
+ul.learn-list li a img { float:left;}
+ul.learn-list li a span { display:block; float:left; padding:20px 15px 0 15px; width:210px; line-height:16px;}
+ul.learn-list li a span strong { display:block; font-weight:normal; font-family:'Titillium Web'; font-size:22px; padding-bottom:10px; text-transform:uppercase; line-height: 23px;}
+
+
+
+ul.learn-list-full { float:left; width:100%;}
+ul.learn-list-full li { display:block; float:left; width:722px; height:115px; background:#FFF; margin:8px 0 0 0; border:solid 1px #bfbfbf;}
+ul.learn-list-full li a { display:block; float:left; width:100%;  color:#404040;}
+ul.learn-list-full li a:hover { background:url(../images/zoom.png) no-repeat right top;}
+ul.learn-list-full li a img { float:left;}
+ul.learn-list-full li a span { display:block; float:left; padding:20px 15px 0 15px; width:577px; line-height:16px;}
+ul.learn-list-full li a span strong { display:block; font-weight:normal; font-family:'Titillium Web'; font-size:24px; padding-bottom:10px; text-transform:uppercase;}

@@ -30,7 +30,43 @@
         </div>
       </div>
 
+        <div class="container">
+            <div class="row">
+            @foreach ($motivations as $motivation)
+                <div class="container col-md-2 col-sm-4 col-xs-6">
+                    <div class="card p-1 mb-2" style="min-height:370px">
+                        <img class="card-img-top" src="../images/motivation{{ $motivation->id }}icon.png" alt="{{ $motivation->name }}" height="150px">
+                        <div class="card-img-overlay">
+                            <h1 class="card-title" style="font-family: 'Bevan', cursive; font-size:1em">@lang($motivation->name)</h1>
+                        </div>
+                        <p class="card-text text-dark mt-4">@lang($motivation->description . "_")</p>
+                        <a href="#" class="btn btn-dark col-10" style="position:absolute; bottom:2px; right:7%">@lang('View')</a>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col mb-5 mt-1">
+                <h2 class="font-weight-light mb-3 text-dark">@lang('Academic References to Our Survey!')</h2>
+                <hr class="star-dark">
+                <p class="font-weight-light mb-3 text-dark">@lang('Thank you for citing...') </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <ul>
+                @foreach ($references as $reference)
+                        <li> <a href="{{ $reference->link }}">{{ $reference->name }}</a> </li>
+                @endforeach
+                </ul>
+            </div>
+        </div>
+
     </section>
+
+
 
 @foreach ($motivations as $motivation)
 
@@ -50,7 +86,7 @@
         <div class="modal-body">
             <h5 class="text-secondary mb-0 font-weight-bold" style="font-family: 'Titillium Web', sans-serif;">@lang('Description')</h5>
             <hr>
-            <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find(8)->name)" style="max-width:50%">
+            <img class="float-left mr-4" src="../images/motivation{{ $motivation->id }}__.png" alt="@lang(App\Motivation::find($motivation->id)->name)" style="max-width:50%">
             <div class="clearfix">@lang(App\Motivation::find($motivation->id)->description)</div>
             <h5 class="text-secondary mb-0 font-weight-bold mt-4" style="font-family: 'Titillium Web', sans-serif;">@lang('Protect')</h5>
             <hr>
