@@ -32,8 +32,14 @@ class RouteController extends Controller
         return view('surveys.group')->with('questions',$questions);
     }
 
-    public function result()
+    public function about()
     {
-        return view('surveys.results');
+        return view('about');
+    }
+
+    public function download()
+    {
+        $pathToFile = "./en.json";
+        return response()->download($pathToFile);
     }
 }

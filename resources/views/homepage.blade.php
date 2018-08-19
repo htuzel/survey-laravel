@@ -4,7 +4,7 @@
 
     <section class="container-fluid  text-white text-center">
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="col">
             <!-- Set up your HTML -->
             <div id="owl-demo" class="owl-carousel owl-theme owl-loaded">
@@ -22,7 +22,7 @@
     </div>
 
       <div class="row">
-        <div class="col mb-5 mt-1">
+        <div class="col mb-3 mt-1">
           <h1 class="text-uppercase mb-3 text-dark">@lang('Discover yourself now!')</h1>
           <hr class="star-dark">
           <h2 class="font-weight-light mb-3 text-dark">@lang('Join our Digital Media Literacy Survey Free!')</h2>
@@ -30,17 +30,29 @@
         </div>
       </div>
 
+        <div class="container mb-5">
+            <div class="row">
+                <div class="container col-6">
+                    <a href="{{ route('individual_survey')}}" class="btn btn-danger btn-lg nonedecoration text-white" style="text-decoration:none">@lang('Individual Entry')</a>
+                </div>
+                <div class="container col-6">
+                    <a href="{{ route('group_survey')}}" class="btn btn-danger btn-lg nonedecoration text-white" style="text-decoration:none">@lang('Group Entry')</a>
+                </div>
+            </div>
+        </div>
+        <hr class="star-dark">
+
+
         <div class="container">
             <div class="row">
             @foreach ($motivations as $motivation)
                 <div class="container col-md-2 col-sm-4 col-xs-6">
-                    <div class="card p-1 mb-2" style="min-height:370px">
+                    <div class="card mb-5"  style="min-height:320px" data-toggle="modal" data-target="#myModal{{ $motivation->id }}">
                         <img class="card-img-top" src="../images/motivation{{ $motivation->id }}icon.png" alt="{{ $motivation->name }}" height="150px">
-                        <div class="card-img-overlay">
+                        <div class="card-img-overlay zoom-info"">
                             <h1 class="card-title" style="font-family: 'Bevan', cursive; font-size:1em">@lang($motivation->name)</h1>
                         </div>
                         <p class="card-text text-dark mt-4">@lang($motivation->description . "_")</p>
-                        <a href="#" class="btn btn-dark col-10" style="position:absolute; bottom:2px; right:7%">@lang('View')</a>
                     </div>
                 </div>
             @endforeach
@@ -56,13 +68,29 @@
         </div>
         <div class="container">
             <div class="card">
-                <ul>
+                <ul class="list-group">
                 @foreach ($references as $reference)
-                        <li> <a href="{{ $reference->link }}">{{ $reference->name }}</a> </li>
+                    <li class="list-group-item text-left">
+                        <i class="fas fa-bookmark text-dark"></i>
+                        <a href="{{ $reference->link }}" class="pl-3">  {{ $reference->name }} / <small style="font-size:0.5em">{{ $reference->date }}</small></a>
+                    </li>
                 @endforeach
                 </ul>
             </div>
         </div>
+
+        <div class="row mt-5">
+                <div class="col mb-5 mt-1">
+                    <h2 class="font-weight-light mb-3 text-dark">@lang('Join Us')</h2>
+                    <hr class="star-dark">
+                    <p class="font-weight-light mb-3 text-dark">@lang('If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact us.') </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container col-6">
+                    <a href="{{ route('download_translate')}}" target="_blank" class="btn btn-warning btn-lg nonedecoration text-dark" style="text-decoration:none">@lang('Download Translate File')</a>
+                </div>
+            </div>
 
     </section>
 

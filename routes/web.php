@@ -19,9 +19,13 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/individual-survey', 'RouteController@individual')->name('individual_survey');
     Route::get('/group-survey', 'RouteController@group')->name('group_survey');
     Route::get('/result','RouteController@result')->name('result');
+    Route::get('/about-us','RouteController@about')->name('about');
+
 
     Route::post('/result-individual', 'ResultPageController@individual')->name('form_evaluation_individual');
     Route::post('/result-group', 'ResultPageController@group')->name('form_evaluation_group');
+    Route::get('/download-translate', 'RouteController@download')->name('download_translate');
+
 
     Auth::routes();
 

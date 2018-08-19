@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>@lang('Media Literacy Survey')</title>
+    <link rel="icon" href="../images/Quiz.png">
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">

@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>@lang('Media Literacy Survey')</title>
+    <link rel="icon" href="../images/Quiz.png">
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
@@ -30,21 +31,21 @@
 <!-- Header -->
     <div class="container-fluid ">
 
-     <header class="row">
-
-      <div class="col bg-dark text-center">
-        <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
-          <img src="images/Quiz.png" alt="Media Education Lab" style="width:70px;height:70px">
-        </a>
-        <a href="{{ route('mainpage') }}">@lang('Welcome To Our Digital Media Education Survey')</a>
-      </div>
-
+    <header class="row">
+        <div class="col-md-3 d-none d-md-block d-lg-block p-3 pl-5 py-5" style="background-color:#343A40">
+            <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
+                <img src="images/Quiz.png" alt="Media Education Lab" style="max-height: 200px">
+            </a>
+        </div>
+        <div class="col bg-dark text-center col-md-9 col-12 p-3 pt-5">
+            <a href="{{ route('mainpage') }}" class="text-white nonedecoration"><h1 style="font-size:5em; text-decoration:none" >@lang('Welcome To Our Digital Media Education Survey')</h1></a>
+        </div>
     </header>
 
 <!-- Navigation -->
      <nav class="row">
 
-      <div class="col bg-dark navbar navbar-expand-md justify-content-center">
+      <div class="col navbar navbar-expand-md justify-content-center" style="background-color:gray">
 
          <ul class="navbar-nav">
 
@@ -54,6 +55,10 @@
 
           <li class="nav-item pr-5">
             <a class="nav-link" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
+          </li>
+
+          <li class="nav-item pr-5">
+            <a class="nav-link" href="{{ route('about') }}">@lang('About Us')</a>
           </li>
 
         @guest

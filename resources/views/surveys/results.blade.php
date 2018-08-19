@@ -13,7 +13,7 @@
             <img class="card-img-top" src="{{ asset('images/' .$resultKeys[0] . '.png') }}" alt="Card image cap">
         </a>
         <div class="container text-center" id="motivation1">
-            {{ App\Motivation::where('name', $resultKeys[0])->first()->description }}
+            @lang(App\Motivation::where('name', $resultKeys[0])->first()->description )
         </div>
         <a data-toggle="modal" data-target="#myModal{{ $resultKeys[0] }}" class="text-center" href="#">@lang('Read More..')</a>
     </div>
@@ -80,7 +80,7 @@
                         <img class="card-img-top" src="{{ asset('images/' .$resultKeys[1] . '.png') }}" alt="Card image cap">
                     </a>
                     <div class="container text-center" id="motivation2">
-                        {{ App\Motivation::where('name', $resultKeys[1])->first()->description }}
+                            @lang(App\Motivation::where('name', $resultKeys[1])->first()->description )
                     </div>
                     <a data-toggle="modal" data-target="#myModal{{ $resultKeys[1] }}" class="text-center" href="#">@lang('Read More..')</a>
             </div>
@@ -92,7 +92,7 @@
                     <img class="card-img-top" src="{{ asset('images/' .$resultKeys[2] . '.png') }}" alt="Card image cap">
                 </a>
                 <div class="container text-center" id="motivation3">
-                    {{ App\Motivation::where('name', $resultKeys[2])->first()->description }}
+                        @lang(App\Motivation::where('name', $resultKeys[2])->first()->description )
                 </div>
                 <a data-toggle="modal" data-target="#myModal{{ $resultKeys[2] }}" class="text-center" href="#">@lang('Read More..')</a>
             </div>
@@ -115,9 +115,11 @@
             </div>
         </div>
     </div>
-    <div class="container col-md-8 col-12 my-3">
-        <div class="card p-3">
-            <canvas id="motivationch"></canvas>
+    <div class="card col-md-12 col-12 my-3">
+        <div class="row p-3">
+            <div class="container">
+                <canvas id="motivationch"></canvas>
+            </div>
         </div>
     </div>
 </div>

@@ -146,21 +146,41 @@ section {
 
 .boxshadow {-moz-box-shadow:3px 0 8px #999999; -webkit-box-shadow:3px 0 8px #999999; box-shadow:3px 0 8px #999999;}
 
-ul.learn-list { float:left; width:100%;}
-ul.learn-list li { display:block; float:left; width:356px; height:115px; background:#FFF; margin:8px 0 0 8px; border:solid 1px #bfbfbf;}
-ul.learn-list li:nth-child(odd) { margin-left:0;}
-ul.learn-list li a { display:block; float:left; width:356px; height:115px; color:#404040;}
-ul.learn-list li a:hover { background:url(../images/zoom.png) no-repeat right top;}
-ul.learn-list li a img { float:left;}
-ul.learn-list li a span { display:block; float:left; padding:20px 15px 0 15px; width:210px; line-height:16px;}
-ul.learn-list li a span strong { display:block; font-weight:normal; font-family:'Titillium Web'; font-size:22px; padding-bottom:10px; text-transform:uppercase; line-height: 23px;}
+.zoom-info:hover { background:url(../images/zoom.png) no-repeat right top; }
 
+.nonedecoration:hover {
+    text-decoration: none;
+    color: gray;
+}
 
+.nonedecoration:link {
+    text-decoration: none;
+    color: gray;
+}
 
-ul.learn-list-full { float:left; width:100%;}
-ul.learn-list-full li { display:block; float:left; width:722px; height:115px; background:#FFF; margin:8px 0 0 0; border:solid 1px #bfbfbf;}
-ul.learn-list-full li a { display:block; float:left; width:100%;  color:#404040;}
-ul.learn-list-full li a:hover { background:url(../images/zoom.png) no-repeat right top;}
-ul.learn-list-full li a img { float:left;}
-ul.learn-list-full li a span { display:block; float:left; padding:20px 15px 0 15px; width:577px; line-height:16px;}
-ul.learn-list-full li a span strong { display:block; font-weight:normal; font-family:'Titillium Web'; font-size:24px; padding-bottom:10px; text-transform:uppercase;}
+.nonedecoration:visited {
+    text-decoration: none;
+    color: gray;
+}
+
+.nonedecoration:active {
+    text-decoration: none;
+    color: gray;
+}
+
+.btn-action {
+    background: linear-gradient(135deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81216', endColorstr='#fc1b21',GradientType=1 );
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border: medium none;
+}
+
+#contact .card:hover i,#contact .card:hover h4{
+	color: #87d37c;
+}
