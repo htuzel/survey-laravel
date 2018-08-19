@@ -49,8 +49,8 @@
                         </li>
                     </ul>
                 </li>
-                <li id="questions_menu">
-                    <a href="/questions">@lang("Questions")</a>
+                <li id="references_menu">
+                    <a href="/references">@lang("References")</a>
                 </li>
             </ul>
             <ul class="list-unstyled CTAs">

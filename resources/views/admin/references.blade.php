@@ -6,38 +6,36 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white"><strong>@lang('Questions')</strong></div>
+                    <div class="card-header bg-secondary text-white"><strong>@lang('References')</strong></div>
                         <div class="card-body">
                         <div id="browse_app">
-                            <a class="btn btn-large btn-info float-right m-2" href="questions/create" {{--   style="pointer-events: none; cursor: not-allowed; opacity: 0.5;" --}}><i class="fa fa-plus mr-1"></i>@lang('New Question')</a>
+                            <a class="btn btn-large btn-info float-right m-2" href="references/create" {{--   style="pointer-events: none; cursor: not-allowed; opacity: 0.5;" --}}><i class="fa fa-plus mr-1"></i>@lang('New reference')</a>
                         </div>
                         <input class="form-control" id="searchtable" type="text" placeholder="@lang('Search..')">
                         <br>
-                            <table class="table table-striped table-sm sortable" id="questions" >
+                            <table class="table table-striped table-sm sortable" id="references" >
                                 <thead>
                                     <tr>
                                         <th scope="col">@lang('Id')</th>
-                                        <th scope="col">@lang('Question')</th>
-                                        <th scope="col">@lang('Motivation')</th>
-                                        <th scope="col">@lang('Style')</th>
-                                        <th scope="col">@lang('Language')</th>
+                                        <th scope="col">@lang('Title')</th>
+                                        <th scope="col">@lang('Link')</th>
+                                        <th scope="col">@lang('Date')</th>
                                         <th scope="col">@lang('Process')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($questions as $question)
+                                    @foreach($references as $reference)
                                         <tr>
-                                            <td scope="row">{{ $question->id }}</th>
-                                            <td>{{ $question->question }}</td>
-                                            <td style="text-transform: capitalize">{{ App\Motivation::find($question->motivation_id)->name }}</td>
-                                            <td style="text-transform: capitalize">{{ $question->style }}</td>
-                                            <td style="text-transform: capitalize">{{ $question->lang }}</td>
+                                            <td scope="row">{{ $reference->id }}</th>
+                                            <td style="text-transform: capitalize">{{ $reference->name }}</td>
+                                            <td style="text-transform: capitalize">{{ $reference->link }}</td>
+                                            <td style="text-transform: capitalize">{{ $reference->date }}</td>
                                             <td>
                                                 <span>
-                                                    <button onclick="edit('{{ $question->id  }}')" type="button" class="btn btn-link text-warning p-0" disabled>@lang('Edit')</button>
+                                                    <button onclick="edit('{{ $reference->id  }}')" type="button" class="btn btn-link text-warning p-0" >@lang('Edit')</button>
                                                 </span>
                                                 <span>
-                                                    <button onclick="delete_question('{{ $question->id  }}')" type="button" class="btn btn-link text-danger p-0" disabled>@lang('Delete')</button>
+                                                    <button onclick="delete_reference('{{ $reference->id  }}')" type="button" class="btn btn-link text-danger p-0" >@lang('Delete')</button>
                                                 </span>
                                             </td>
                                         </tr>
@@ -45,7 +43,7 @@
                                 </tbody>
                             </table>
                             <div class="row justify-content-center">
-                                {{ $questions->links() }}
+                                {{ $references->links() }}
                             </div>
                         </div>
                     </div>
@@ -58,40 +56,40 @@
     $(document).ready(function () {
         $("#searchtable").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#questions tr").filter(function () {
+            $("#references tr").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
     });
 
     function edit(id) {
-        window.location = "{{ url('questions') }}" + "/" + id + "/edit";
+        window.location = "{{ url('references') }}" + "/" + id + "/edit";
     }
 
-    function delete_question(id) {
+    function delete_reference(id) {
         swal({
                 title: "@lang('Are you sure')",
-                text: " @lang('The deletion process will have serious consequences') " + "@lang('If you delete the question, you will not be able to bring it back')",
+                text: " @lang('The deletion process will have serious consequences') " + "@lang('If you delete the reference, you will not be able to bring it back')",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    axios.delete('questions/' + id)
+                    axios.delete('references/' + id)
                         .then(function (response) {
-                            swal("@lang('Question has been deleted')", "", "success");
+                            swal("@lang('reference has been deleted')", "", "success");
                             setTimeout(function () {
                                 location.reload();
                             }, 500);
                             console.log(response);
                         })
                         .catch(function (error) {
-                            swal("@lang('Question has not been deleted')");
+                            swal("@lang('reference has not been deleted')");
                             console.log(error);
                         });
                 } else {
-                    swal("@lang('Question has not been deleted')");
+                    swal("@lang('reference has not been deleted')");
                 }
             });
     }
@@ -99,7 +97,7 @@
 </script>
 
 <script>
-        $("#questions_menu").addClass( "active" );
+        $("#references_menu").addClass( "active" );
 </script>
 
 @endsection
