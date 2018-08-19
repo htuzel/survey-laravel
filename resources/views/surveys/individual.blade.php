@@ -116,7 +116,7 @@
             @foreach ($questions as $question)
                 <div class="form-group row">
                     <div class="col-md-5 col-12">
-                        <strong>{{ $count }} - </strong>  {{ $question->question }}
+                        <strong>{{ $count }} - </strong>  @lang($question->question)
                     </div>
                     <div class="col-md-7 col-12">
                         <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="1" > </label>
