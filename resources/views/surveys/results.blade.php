@@ -124,13 +124,22 @@
                     <canvas id="motivationch"></canvas>
                 </div>
             </div>
+            <div id="shareIconsCountInside" class="my-2"></div>
         </div>
     </div>
 </div>
 
-<div class="container" id="resultImg">
 
-</div>
+<script>
+$("#shareIconsCountInside").jsSocials({
+    url: "www.setyourmotivation.com",
+    text: "Hi guys, my Digital Media Motivation is " + "`@lang(App\Motivation::find($motivation->id)->name)`" + " Now visit and learn your Digital Motivation",
+    showLabel: false,
+    showCount: false,
+    shares: ["twitter", "facebook"]
+});
+</script>
+
 <?php
     $total_user = App\Result::all()->count();
     $activist_i = 0;
@@ -239,16 +248,7 @@
 
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/shave/2.4.0/jquery.shave.min.js"></script>
-<script>
-$( document ).ready(function() {
-    html2canvas($('#capture'), {
-    onrendered: function(canvas) {
-        $('#resultImg').html(canvas)
-    }
-  });
-});
 
-</script>
 <script>
     //SHAVE
     $('#motivation1').shave("100");

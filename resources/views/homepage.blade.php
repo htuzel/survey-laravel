@@ -79,20 +79,20 @@
                 </ul>
             </div>
         </div>
-
-        <div class="row mt-5">
-                <div class="col mb-5 mt-1">
-                    <h2 class="font-weight-light mb-3 text-dark">@lang('Join Us')</h2>
-                    <hr class="star-dark">
-                    <p class="font-weight-light mb-3 text-dark">@lang('If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact us.') </p>
-                </div>
+        <div class="container">
+            <div class="row mt-5">
+                    <div class="col mb-5 mt-1">
+                        <h2 class="font-weight-light mb-3 text-dark">@lang('Join Us')</h2>
+                        <hr class="star-dark">
+                        <p class="font-weight-light mb-3 text-dark">@lang('If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact us.') </p>
+                    </div>
             </div>
             <div class="container">
                 <div class="container col-6">
                     <a href="{{ route('download_translate')}}" target="_blank" class="btn btn-warning btn-lg nonedecoration text-dark" style="text-decoration:none">@lang('Download Translate File')</a>
                 </div>
             </div>
-
+        </div>
     </section>
 
 
