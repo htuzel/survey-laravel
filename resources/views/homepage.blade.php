@@ -72,7 +72,7 @@
                 @foreach ($references as $reference)
                     <li class="list-group-item text-left">
                         <i class="fas fa-bookmark text-dark"></i>
-                        <a href="{{ $reference->link }}" class="pl-3">  {{ $reference->name }} / <small style="font-size:0.5em">{{ $reference->date }}</small></a>
+                        <a href="{{ $reference->link }}" class="pl-3">  {{ $reference->name }} / {{ $reference->date }}</a>
                     </li>
                 @endforeach
                 </ul>
