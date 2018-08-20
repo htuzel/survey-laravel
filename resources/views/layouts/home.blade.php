@@ -56,28 +56,28 @@
 
            <li class="nav-item pr-5">
                <div class="container text-center">
-                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-home text-white fa-2x"></i></span>
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ url('/')}}"><i class="fas fa-home text-white"></i></a></span>
                     <a class="nav-link pt-0" href="{{ url('/') }}">@lang('Home')</a>
                </div>
            </li>
 
           <li class="nav-item pr-5">
             <div class="container text-center">
-                <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-user text-white fa-2x"></i></span>
+                <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ route('individual_survey') }}"><i class="fas fa-user text-white"></i></a></span>
                 <a class="nav-link pt-0" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
             </div>
           </li>
 
           <li class="nav-item pr-5">
                 <div class="container text-center">
-                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-users text-white fa-2x"></i></span>
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ route('group_survey') }}"><i class="fas fa-users text-white"></i></a></span>
                     <a class="nav-link pt-0" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
                 </div>
           </li>
 
           <li class="nav-item pr-5">
                 <div class="container text-center">
-                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-question text-white fa-2x"></i></span>
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ route('about') }}"><i class="fas fa-question text-white"></i></a></span>
                     <a class="nav-link pt-0" href="{{ route('about') }}">@lang('About Us')</a>
                 </div>
           </li>
@@ -88,7 +88,7 @@
 
          <li class="nav-item dropdown dropright text-capitalize">
                 <div class="container text-center">
-                        <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-globe text-white fa-2x"></i></span>
+                        <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="#"><i class="fas fa-globe text-white"></i></a></span>
                         <a class="nav-link dropdown-toggle pt-0" id="navbardrop"  href="#" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" v-pre>
           <strong id="locale">{{ app()->getLocale() }} </strong>
