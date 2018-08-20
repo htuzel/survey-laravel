@@ -133,9 +133,10 @@
 <script>
 $("#shareIconsCountInside").jsSocials({
     url: "www.setyourmotivation.com",
-    text: "Hi guys, my Digital Media Motivation is " + "`@lang(App\Motivation::find($motivation->id)->name)`" + " Now visit and learn your Digital Motivation",
+    text: "Hi guys, my Digital Media Motivation is " + "`@lang(App\Motivation::find($motivation->id)->name)`" + " Now visit https://www.setyourmotivation.com and learn your Digital Motivation",
     showLabel: false,
     showCount: false,
+    shareIn: "popup",
     shares: ["twitter", "facebook"]
 });
 </script>
