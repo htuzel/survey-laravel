@@ -3,6 +3,7 @@
 @section('content')
 
 <?php $resultKeys = $results->keys();
+//dd($resultKeys);
     $motivations = App\Motivation::all();
 ?>
 <div id="capture">
@@ -22,7 +23,7 @@
 
 
         <!-- The Modal1 -->
-        <div class="modal fade" id="myModal{{ strtolower($motivation->name) }}">
+        <div class="modal fade" id="myModal{{ strtolower($motivation->slug) }}">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
 

@@ -20,6 +20,7 @@
     </div>
 </div>
  <!-- The Modal1 -->
+ @foreach ($motivations as $motivation)
 <div class="modal fade" id="myModal{{ $motivation->id }}">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -60,7 +61,7 @@
         </div>
     </div>
 </div>
-
+@endforeach
 <div class="container">
   <div class="card">
     <div class="container text-center pt-5 px-5">

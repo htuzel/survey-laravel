@@ -49,7 +49,7 @@
             <div class="row">
             @foreach ($motivations as $motivation)
                 <div class="container col-md-2 col-sm-4 col-xs-6">
-                    <div class="card mb-5"  style="min-height:320px" data-toggle="modal" data-target="#myModal{{ $motivation->id }}">
+                    <div class="card mb-5"  style="min-height:320px; cursor: pointer;" data-toggle="modal" data-target="#myModal{{ $motivation->id }}"  >
                         <img class="card-img-top" src="../images/motivation{{ $motivation->id }}icon.png" alt="{{ $motivation->name }}" height="150px">
                         <div class="card-img-overlay zoom-info"">
                             <h1 class="card-title" style="font-family: 'Bevan', cursive; font-size:1em">@lang($motivation->name)</h1>
