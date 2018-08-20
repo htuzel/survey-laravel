@@ -49,24 +49,36 @@
 <!-- Navigation -->
      <nav class="row">
 
-      <div class="col navbar navbar-expand-md justify-content-center" style="background-color:gray">
+      <div class="col navbar navbar-expand-md justify-content-center" style="background-color:#563D7C">
 
          <ul class="navbar-nav">
 
            <li class="nav-item pr-5">
-             <a class="nav-link" href="{{ route('home') }}">@lang('Home')</a>
+               <div class="container text-center">
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-home text-white fa-2x"></i></span>
+                    <a class="nav-link pt-0" href="{{ url('/') }}">@lang('Home')</a>
+               </div>
            </li>
 
           <li class="nav-item pr-5">
-            <a class="nav-link" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
+            <div class="container text-center">
+                <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-user text-white fa-2x"></i></span>
+                <a class="nav-link pt-0" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
+            </div>
           </li>
 
           <li class="nav-item pr-5">
-            <a class="nav-link" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
+                <div class="container text-center">
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-users text-white fa-2x"></i></span>
+                    <a class="nav-link pt-0" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
+                </div>
           </li>
 
           <li class="nav-item pr-5">
-            <a class="nav-link" href="{{ route('about') }}">@lang('About Us')</a>
+                <div class="container text-center">
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-question text-white fa-2x"></i></span>
+                    <a class="nav-link pt-0" href="{{ route('about') }}">@lang('About Us')</a>
+                </div>
           </li>
 
 
@@ -74,7 +86,9 @@
         @guest
 
          <li class="nav-item dropdown dropright text-capitalize">
-          <a class="nav-link dropdown-toggle" id="navbardrop"  href="#" role="button" data-toggle="dropdown"
+                <div class="container text-center">
+                        <span class="d-none d-md-block d-lg-block pt-4 mb-0"><i class="fas fa-globe text-white fa-2x"></i></span>
+                        <a class="nav-link dropdown-toggle pt-0" id="navbardrop"  href="#" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" v-pre>
           <strong id="locale">{{ app()->getLocale() }} </strong>
           <span class="caret"></span>
@@ -85,6 +99,8 @@
             <span class="caret"></span>
             <a class="dropdown-item" href="{{ language()->back($code) }}">{{ $name }} </a>
             @endforeach
+                    </div>
+
          </li>
 
         @else
@@ -119,7 +135,7 @@
 
 
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="footer text-center" style="background-color:#563D7C">
       <div class="container">
         <div class="row">
           <div class="col-md-4 mb-5 mb-lg-0">

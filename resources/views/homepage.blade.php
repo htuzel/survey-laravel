@@ -33,10 +33,10 @@
         <div class="container mb-5">
             <div class="row">
                 <div class="container col-6">
-                    <a href="{{ route('individual_survey')}}" class="btn btn-danger btn-lg nonedecoration text-white" style="text-decoration:none">@lang('Individual Entry')</a>
+                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white" style="text-decoration:none; background-color:#563D7C">@lang('Individual Entry')</a>
                 </div>
                 <div class="container col-6">
-                    <a href="{{ route('group_survey')}}" class="btn btn-danger btn-lg nonedecoration text-white" style="text-decoration:none">@lang('Group Entry')</a>
+                    <a href="{{ route('group_survey')}}" class="btn btn-lg nonedecoration text-white" style="text-decoration:none; background-color:#563D7C">@lang('Group Entry')</a>
                 </div>
             </div>
         </div>
