@@ -34,7 +34,7 @@
 
 <!-- Header -->
     <div class="container-fluid ">
-
+{{--
     <header class="row">
         <div class="col-md-3 d-none d-md-block d-lg-block p-3 pl-5 py-5" style="background-color:#343A40">
             <a class="img-fluid pr-3" href="{{ route('mainpage') }}">
@@ -45,13 +45,17 @@
             <a href="{{ route('mainpage') }}" class="text-white nonedecoration"><h1 style="font-size:5em; text-decoration:none" >@lang('Welcome To Our Digital Media Education Survey')</h1></a>
         </div>
     </header>
-
+--}}
 <!-- Navigation -->
      <nav class="row">
 
       <div class="col navbar navbar-expand-md justify-content-center" style="background-color:gray">
 
          <ul class="navbar-nav">
+
+           <li class="nav-item pr-5">
+             <a class="nav-link" href="{{ route('home') }}">@lang('Home')</a>
+           </li>
 
           <li class="nav-item pr-5">
             <a class="nav-link" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
@@ -64,6 +68,8 @@
           <li class="nav-item pr-5">
             <a class="nav-link" href="{{ route('about') }}">@lang('About Us')</a>
           </li>
+
+
 
         @guest
 
