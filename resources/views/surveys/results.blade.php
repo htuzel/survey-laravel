@@ -124,6 +124,7 @@
                     <canvas id="motivationch"></canvas>
                 </div>
             </div>
+            <h3>@lang('Share your score')</h3>
             <div id="shareIconsCountInside" class="my-2"></div>
         </div>
     </div>
@@ -133,7 +134,7 @@
 <script>
 $("#shareIconsCountInside").jsSocials({
     url: "www.setyourmotivation.com",
-    text: "Hi guys, my Digital Media Motivation is " + "`@lang(App\Motivation::find($motivation->id)->name)`" + " Now visit https://www.setyourmotivation.com and learn your Digital Motivation",
+    text: "Hi guys, my Digital Media Motivation is " + "`{{  App\Motivation::find($motivation->id)->name }}`" + " Now visit https://www.setyourmotivation.com and learn your Digital Motivation @mediaeducationlab @medialiteracy #mymotivation",
     showLabel: false,
     showCount: false,
     shareIn: "popup",
@@ -285,7 +286,7 @@ $("#shareIconsCountInside").jsSocials({
 				},
 				title: {
 					display: true,
-					text: 'Empower vs. Protect',
+					text: '@lang('Empower vs. Protect')',
                     fontSize : 36
 				},
 				animation: {
@@ -353,7 +354,7 @@ new Chart(document.getElementById("motivationch"), {
     options: {
       title: {
         display: true,
-        text: 'Your All Motivations',
+        text: '@lang('Your All Motivations')',
         fontSize:36
       },
       scale: {

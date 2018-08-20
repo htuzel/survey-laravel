@@ -8,7 +8,7 @@
             <p class="text-center w-75 m-auto">@lang('Digital Learning Motivation Quiz for Educators (DLMQE):')</p>
 
             <div class="container">
-                <div class="card">
+                <div class="card p-2 pl-4">
                     <p>@lang('Quiz Explanation')</p>
                 </div>
             </div>
