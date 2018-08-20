@@ -63,7 +63,6 @@
             <div class="col mb-5 mt-1">
                 <h2 class="font-weight-light mb-3 text-dark">@lang('Academic References to Our Survey!')</h2>
                 <hr class="star-dark">
-                <p class="font-weight-light mb-3 text-dark">@lang('Thank you for citing...') </p>
             </div>
         </div>
         <div class="container">
@@ -72,7 +71,7 @@
                 @foreach ($references as $reference)
                     <li class="list-group-item text-left">
                         <i class="fas fa-bookmark text-dark"></i>
-                        <a href="{{ $reference->link }}" class="pl-3">  {{ $reference->name }} / {{ $reference->date }}</a>
+                        <a href="{{ $reference->link }}" target="_blank" class="pl-3">  {{ $reference->name }} / {{ $reference->date }}</a>
                     </li>
                 @endforeach
                 </ul>
