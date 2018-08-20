@@ -26,6 +26,7 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
   </head>
 
   <body id="page-top">
@@ -179,7 +180,7 @@
                 University of Rhode Island </br>
                 Davis Hall Kingston, Rhode Island 02881 USA </br>
                 </br>
-                @lang('Email'): media@mediaeducationlab.com  </small>
+                @lang('Email'): sait@mediaeducationlab.com  </small>
           </div>
         </div>
       </div>

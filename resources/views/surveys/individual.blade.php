@@ -130,8 +130,8 @@
                 <?php $count++ ?>
             @endforeach
             <div class="form-group row my-5">
-                <div class="col-md-6 offset-md-10 offset-8">
-                    <button type="submit" class="btn btn-primary">
+                <div class="col-6 offset-3">
+                    <button type="submit" class="btn btn-primary col-12" style="background-color:#563D7C">
                         @lang('Send')
                     </button>
                 </div>

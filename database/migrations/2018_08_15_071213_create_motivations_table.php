@@ -16,6 +16,7 @@ class CreateMotivationsTable extends Migration
         Schema::create('motivations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
             $table->string('description',5000)->nullable();
             $table->string('protect1',1000)->nullable();
             $table->string('protect2',1000)->nullable();

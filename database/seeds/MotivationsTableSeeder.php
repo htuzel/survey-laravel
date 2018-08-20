@@ -14,6 +14,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 1,
             'name' => 'Activist',
+            'slug' => 'activist',
             'description' =>    'activist_description',
             'protect1' =>       'activist_protect1',
             'protect2' =>       'activist_protect2',
@@ -30,6 +31,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 2,
             'name' => 'Alt',
+            'slug' => 'alt',
             'description' =>    'alt_description',
             'protect1' =>       'alt_protect1',
             'protect2' =>       'alt_protect2',
@@ -46,6 +48,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 3,
             'name' => 'Demystifier',
+            'slug' => 'demystifier',
             'description' =>    'demystifier_description',
             'protect1' =>       'demystifier_protect1',
             'protect2' =>       'demystifier_protect2',
@@ -62,6 +65,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 4,
             'name' => 'Motivator',
+            'slug' => 'motivator',
             'description' =>    'motivator_description',
             'protect1' =>       'motivator_protect1',
             'protect2' =>       'motivator_protect2',
@@ -78,6 +82,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 5,
             'name' => 'Professional',
+            'slug' => 'professional',
             'description' =>    'professional_description',
             'protect1' =>       'professional_protect1',
             'protect2' =>       'professional_protect2',
@@ -94,6 +99,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 6,
             'name' => 'Professor',
+            'slug' => 'professor',
             'description' =>    'professor_description',
             'protect1' =>       'professor_protect1',
             'protect2' =>       'professor_protect2',
@@ -110,6 +116,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 7,
             'name' => 'Spirit Guide',
+            'slug' => 'spirit_guide',
             'description' =>    'spirit-guide_description',
             'protect1' =>       'spirit-guide_protect1',
             'protect2' =>       'spirit-guide_protect2',
@@ -126,6 +133,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 8,
             'name' => 'Taste-Maker',
+            'slug' => 'taste_maker',
             'description' =>    'taste-maker_description',
             'protect1' =>       'taste-maker_protect1',
             'protect2' =>       'taste-maker_protect2',
@@ -142,6 +150,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 9,
             'name' => 'Teacher 2.0',
+            'slug' => 'teacher',
             'description' =>    'teacher_description',
             'protect1' =>       'teacher_protect1',
             'protect2' =>       'teacher_protect2',
@@ -158,6 +167,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 10,
             'name' => 'Techie',
+            'slug' => 'techie',
             'description' =>    'techie_description',
             'protect1' =>       'techie_protect1',
             'protect2' =>       'techie_protect2',
@@ -174,6 +184,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 11,
             'name' => 'Trendsetter',
+            'slug' => 'trendsetter',
             'description' =>    'trendsetter_description',
             'protect1' =>       'trendsetter_protect1',
             'protect2' =>       'trendsetter_protect2',
@@ -190,6 +201,7 @@ class MotivationsTableSeeder extends Seeder
         DB::table('motivations')->insert([
             'id' => 12,
             'name' => 'Watchdog',
+            'slug' => 'watchdog',
             'description' =>    'watchdog_description',
             'protect1' =>       'watchdog_protect1',
             'protect2' =>       'watchdog_protect2',
