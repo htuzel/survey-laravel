@@ -12,8 +12,10 @@
                             <table class="table table-striped table-sm sortable" id="results" style="table-layout:fixed; width:100%;">
                                 <thead>
                                     <tr>
+                                        {{--
                                         <th scope="col"><small style="font-size:0.5em">@lang('Name')</small></th>
                                         <th scope="col"><small style="font-size:0.5em">@lang('Email')</small></th>
+                                        --}}
                                         <th scope="col"><small style="font-size:0.5em">@lang('Activist')</small></th>
                                         <th scope="col"><small style="font-size:0.5em">@lang('Alt')</small></th>
                                         <th scope="col"><small style="font-size:0.5em">@lang('Demystifier')</small></th>
@@ -34,8 +36,10 @@
                                 <tbody>
                                     @foreach($results as $result)
                                         <tr style="font-size:0.6em">
+                                            {{--
                                             <td><small>{{ $result->name }}</small></td>
                                             <td><small>{{ $result->email }}</small></td>
+                                            --}}
                                             <td>{{ $result->activist }}</td>
                                             <td>{{ $result->alt }}</td>
                                             <td>{{ $result->demystifier }}</td>

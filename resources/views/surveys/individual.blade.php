@@ -5,7 +5,6 @@
 <div class="container mt-5">
     <div class="header text-center">
         <h1 class="myheadings">@lang('Learn your Media Education Motivation')</h1>
-        <h2 class="myheadings">@lang('Media Education Lab')</h2>
         <p class="font-weight-light mb-3 text-dark">@lang('No matter what your motivation is, Powerful Voices for Kids has ideas to improve digital& media literacy in your classroom.') </p>
         <div id="owl-demo" class="owl-carousel owl-theme owl-loaded">
             @foreach ($motivations as $motivation)
@@ -66,9 +65,8 @@
   <div class="card">
     <div class="container text-center pt-5 px-5">
         <h4>@lang('Respond to these statements according to how important they are to you:')</h4>
-        <p>@lang('Each question has 5 options.')</p>
     </div>
-    <div class="container pl-5 pt-5" id="form">
+    <div class="container pl-5 pt-3" id="form">
         <form method="POST" action="{{ route('form_evaluation_individual') }}">
             @csrf
             @if ($errors->any())
@@ -87,6 +85,7 @@
                 </ul>
             </div>
             @endif
+            {{--
             <div class="row">
                 <div class="form-group col-12 col-md-6">
                     <label for="Email">@lang('Your Email')</label>
@@ -97,6 +96,7 @@
                     <input type="text" class="form-control" name="name" id="Name" placeholder="Your Name..">
                 </div>
             </div>
+            --}}
             <div class="row mb-3">
                 <div class="col-md-5 col-12 pt-5">
                     <strong class="pt-5">@lang('Questions')</strong>
@@ -119,11 +119,11 @@
                         <strong>{{ $count }} - </strong>  @lang($question->question)
                     </div>
                     <div class="col-md-7 col-12">
-                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="1" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="1" required> </label>
                         <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="2" > </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="3" checked> </label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="4" ></label>
-                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="5" ></label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="3" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="4" > </label>
+                        <label class="radio-inline col-2"><input type="radio" name="answer[{{ $question->id }}]" value="5" > </label>
                     </div>
                 </div>
                 <hr>
@@ -144,7 +144,7 @@
     $(document).ready(function () {
         var owl = $("#owl-demo");
         owl.owlCarousel({
-            items: 6, //10 items above 1000px browser width
+            items: 12, //10 items above 1000px browser width
             autoplay: true,
             autoplayTimeout: 2400,
             autoplayHoverPause: true,

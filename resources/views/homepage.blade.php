@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="container-fluid  text-white text-center">
+    <section class="container-fluid  text-white text-center pt-4">
 
     <div class="container">
         <div class="col">
@@ -23,26 +23,28 @@
 
       <div class="row">
         <div class="col mb-3 mt-1">
+            {{--
           <h1 class="text-uppercase mb-3 text-dark">@lang('Discover yourself now!')</h1>
           <hr class="star-dark">
+          --}}
           <h2 class="font-weight-light mb-3 text-dark">@lang('Join our Digital Media Literacy Survey Free!')</h2>
-          <p class="font-weight-light mb-3 text-dark">@lang('No matter what your motivation is, Powerful Voices for Kids has ideas to improve digital& media literacy in your classroom.') </p>
         </div>
       </div>
 
         <div class="container mb-5">
             <div class="row">
                 <div class="container col-6">
-                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white" style="text-decoration:none; background-color:#563D7C">@lang('Individual Entry')</a>
+                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Individually')</a>
                 </div>
                 <div class="container col-6">
-                    <a href="{{ route('group_survey')}}" class="btn btn-lg nonedecoration text-white" style="text-decoration:none; background-color:#563D7C">@lang('Group Entry')</a>
+                    <a href="{{ route('group_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Group')</a>
                 </div>
             </div>
         </div>
         <hr class="star-dark">
 
-
+        <h2 class="font-weight-light mb-3 text-dark">@lang('What is Your Digital Learning Motivation?')</h2>
+        <p class="font-weight-light mb-3 text-dark">@lang('No matter what your motivation is, Powerful Voices for Kids has ideas to improve digital& media literacy in your classroom.') </p>
         <div class="container">
             <div class="row">
             @foreach ($motivations as $motivation)
@@ -60,7 +62,7 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col mb-5 mt-1">
+            <div class="col mb-1 mt-1">
                 <h2 class="font-weight-light mb-3 text-dark">@lang('Academic References to Our Survey!')</h2>
                 <hr class="star-dark">
             </div>
