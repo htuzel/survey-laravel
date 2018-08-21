@@ -13,17 +13,6 @@
 //Homepage Css
 @import '../css/homepage.css';
 
-//header
-header div a:nth-child(2){
-    font-size: 55px;
-    color:white;
-    text-decoration: none;
-
-    &:hover { color:rgb(226, 130, 21);}
-}
-header div a img{
-    &:hover{transform: scale(1.2,1.2);}
-}
 
 //navigation
 .nav-item a{
@@ -40,20 +29,6 @@ header div a img{
 }
 
 
-
-//placed info icon top-right of motivation image
-section a img{
-    position: relative;
-}
-
-section a i{
-    position:absolute;
-    z-index: 999;
-    bottom: 140%;
-    left: 85%;
-    font-size:13px;
-    color:black;
-}
 
 //section background
 section {

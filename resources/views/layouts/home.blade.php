@@ -41,7 +41,7 @@
 
 
 <!-- Header -->
-    <div class="container-fluid ">
+
 {{--
     <header class="row">
         <div class="col-md-3 d-none d-md-block d-lg-block p-3 pl-5 py-5" style="background-color:#343A40">
@@ -55,34 +55,36 @@
     </header>
 --}}
 <!-- Navigation -->
-     <nav class="row">
 
-      <div class="col navbar navbar-expand-md justify-content-center" style="background-color:#563D7C">
+<div class=container-fluid>
+
+  <nav class="row text-center">
+      <div class="col navbar navbar-expand-lg justify-content-center" style="background-color:#563D7C">
 
          <ul class="navbar-nav">
 
-           <li class="nav-item pr-5">
+           <li class="nav-item pr-3">
                <div class="container text-center">
                     <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ url('/')}}"><i class="fas fa-home text-white"></i></a></span>
                     <a class="nav-link pt-0" href="{{ url('/') }}">@lang('Home')</a>
                </div>
            </li>
 
-          <li class="nav-item pr-5">
+          <li class="nav-item pr-3">
             <div class="container text-center">
                 <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ route('individual_survey') }}"><i class="fas fa-user text-white"></i></a></span>
                 <a class="nav-link pt-0" href="{{ route('individual_survey') }}">@lang('Individual Entry')</a>
             </div>
           </li>
 
-          <li class="nav-item pr-5">
+          <li class="nav-item pr-3">
                 <div class="container text-center">
                     <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ route('group_survey') }}"><i class="fas fa-users text-white"></i></a></span>
                     <a class="nav-link pt-0" href="{{ route('group_survey') }}">@lang('Group Entry')</a>
                 </div>
           </li>
 
-          <li class="nav-item pr-5">
+          <li class="nav-item pr-3">
                 <div class="container text-center">
                     <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="{{ route('about') }}"><i class="fas fa-question text-white"></i></a></span>
                     <a class="nav-link pt-0" href="{{ route('about') }}">@lang('About Us')</a>
@@ -133,20 +135,21 @@
 
         </ul>
       </div>
+  </nav>
+</div>
 
-    </nav> <!--nav terminated-->
 
-</div> <!--container fluid terminated-->
+
+
 
 
     @yield('content')
 
 
     <!-- Footer -->
-    <footer class="footer text-center" style="background-color:#563D7C">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-5 mb-lg-0">
+<div class=container-fluid>
+        <footer class="row footer text-center" style="background-color:#563D7C">
+          <div class="col-xl-4 mb-5 ">
             <h4 class="text-uppercase mb-4">@lang('Our Mission')</h4>
                 <p class="lead mb-0">
                     <small>
@@ -154,7 +157,7 @@
                     </small>
                 </p>
           </div>
-          <div class="col-md-4 mb-5 mb-lg-0">
+          <div class="col-xl-4 mb-5">
             <h4 class="text-uppercase mb-4">Around the Web</h4>
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
@@ -179,7 +182,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-4">
+          <div class="col-xl-4">
             <h4 class="text-uppercase mb-4">@lang('Contact')</h4>
             <p class="lead mb-0"><small>108 Davis Hall
                 Media Education Lab </br>
@@ -188,24 +191,20 @@
                 Davis Hall Kingston, Rhode Island 02881 USA </br>
                 </br>
                 @lang('Email'): sait@mediaeducationlab.com  </small>
+            </p>
           </div>
-        </div>
-      </div>
-    </footer>
+        </footer>
 
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
+
+
+  <div class="row">
+    <div class="col copyright py-4 text-center text-white">
         <small>@lang('Copyright') &copy;2018</small>
-      </div>
     </div>
+  </div>
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
-    </div>
-
+</div>
+   
 
 
 
