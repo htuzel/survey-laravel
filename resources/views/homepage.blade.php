@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <section class="container-fluid  text-white text-center pt-4">
+<section class="container text-white text-center pt-2">
 
-    <div class="container">
+    <div class="row">
         <div class="col">
             <!-- Set up your HTML -->
             <div id="owl-demo" class="owl-carousel owl-theme owl-loaded">
@@ -21,35 +21,29 @@
         </div>
     </div>
 
-      <div class="row">
-        <div class="col mb-3 mt-1">
-            {{--
-          <h1 class="text-uppercase mb-3 text-dark">@lang('Discover yourself now!')</h1>
-          <hr class="star-dark">
-          --}}
-          <h2 class="font-weight-light mb-3 text-dark">@lang('Join our Digital Media Literacy Survey Free!')</h2>
+    <div class="row">
+        <div class="col">
+          <h2 class="font-weight-light mb-3 text-dark">@lang('Take the quiz as individually or in group!')</h2>
         </div>
       </div>
-
-        <div class="container mb-5">
-            <div class="row">
-                <div class="container col-6">
-                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Individually')</a>
+        
+            <div class="row tex-center">
+                <div class="col-sm-12 col-lg-6 mt-3">
+                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Indıvually')</a>
                 </div>
-                <div class="container col-6">
-                    <a href="{{ route('group_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Group')</a>
+                <div class="col-sm-12 col-lg-6 mt-3">
+                    <a href="{{ route('group_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz in Group')</a>
                 </div>
             </div>
-        </div>
+    
         <hr class="star-dark">
-
         <h2 class="font-weight-light mb-3 text-dark">@lang('What is Your Digital Learning Motivation?')</h2>
         <p class="font-weight-light mb-3 text-dark">@lang('No matter what your motivation is, Powerful Voices for Kids has ideas to improve digital& media literacy in your classroom.') </p>
-        <div class="container">
-            <div class="row">
+        
+        <div class="row">
             @foreach ($motivations as $motivation)
-                <div class="container col-md-2 col-sm-4 col-xs-6">
-                    <div class="card mb-5"  style="min-height:320px; cursor: pointer;" data-toggle="modal" data-target="#myModal{{ $motivation->id }}"  >
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card mb-5"  style="min-height:320px;cursor: pointer;" data-toggle="modal" data-target="#myModal{{ $motivation->id }}"  >
                         <img class="card-img-top" src="../images/motivation{{ $motivation->id }}icon.png" alt="{{ $motivation->name }}" height="150px">
                         <div class="card-img-overlay zoom-info"">
                             <h1 class="card-title" style="font-family: 'Bevan', cursive; font-size:1em">@lang($motivation->name)</h1>
@@ -58,41 +52,44 @@
                     </div>
                 </div>
             @endforeach
-            </div>
         </div>
 
         <div class="row mt-5">
             <div class="col mb-1 mt-1">
-                <h2 class="font-weight-light mb-3 text-dark">@lang('Academic References to Our Survey!')</h2>
+                <h2 class="font-weight-light mb-3 text-dark">@lang('What Does the Research Say?')</h2>
                 <hr class="star-dark">
             </div>
         </div>
-        <div class="container">
-            <div class="card">
-                <ul class="list-group">
-                @foreach ($references as $reference)
-                    <li class="list-group-item text-left">
-                        <i class="fas fa-bookmark text-dark"></i>
-                        <a href="{{ $reference->link }}" target="_blank" class="pl-3">  {{ $reference->name }} / {{ $reference->date }}</a>
-                    </li>
-                @endforeach
-                </ul>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row mt-5">
-                    <div class="col mb-5 mt-1">
-                        <h2 class="font-weight-light mb-3 text-dark">@lang('Join Us')</h2>
-                        <hr class="star-dark">
-                        <p class="font-weight-light mb-3 text-dark">@lang('If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact us.') </p>
-                    </div>
-            </div>
-            <div class="container">
-                <div class="container col-6">
-                    <a href="{{ route('download_translate')}}" target="_blank" class="btn btn-warning btn-lg nonedecoration text-dark" style="text-decoration:none">@lang('Download Translate File')</a>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <ul class="list-group">
+                    @foreach ($references as $reference)
+                        <li class="list-group-item text-left">
+                            <i class="fas fa-bookmark text-dark"></i>
+                            <a href="{{ $reference->link }}" target="_blank" class="pl-3">  {{ $reference->name }} / {{ $reference->date }}</a>
+                        </li>
+                    @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
+        
+            <div class="row mt-5">
+                    <div class="col mb-3 mt-1">
+                        <h2 class="font-weight-light mb-3 text-dark">@lang('Help Improve Quiz Translate')</h2>
+                        <hr class="star-dark">
+                        <p class="font-weight-light mb-3 text-dark">@lang('You can help make our translations better, and even add new languages, as part of the our translate community. If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact with Sait Tüzel (sait@mediaeducationlab.com).') </p>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <a href="{{ route('download_translate')}}" target="_blank" class="btn btn-warning btn-lg nonedecoration text-dark" style="text-decoration:none">@lang('Download Translate File')</a>
+                </div>
+            </div>
+        
     </section>
 
 
