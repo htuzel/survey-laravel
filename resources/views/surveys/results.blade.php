@@ -103,30 +103,37 @@
     <div class="container text-center my-5">
         <div class="card">
             <div class="row">
-                <div class="col-md-3 pt-5 pl-5">
-                    <p class="text-secondary" style="font-family: 'Titillium Web', sans-serif;">@lang('You see the opportunities and advantages to using media and technology in your teaching practice.')</p>
+                <div class="col-md-3 col-12 pt-5">
+                    <h6>@lang('Empower')</h6>
+                    <p class="text-secondary p-4" style="font-family: 'Titillium Web', sans-serif;">@lang('You see the opportunities and advantages to using media and technology in your teaching practice.')</p>
                 </div>
-                <div class="container col-md-6 col-12">
+                <div class="col-md-6 col-12">
                     <canvas id="emvspro"></canvas>
                     <p class="text-center" style="font-family: 'Titillium Web', sans-serif;">
                         <span style="color:rgba(68, 197, 52, 0.9)">{{$result->empower}}</span> /
                         <span style="color: rgba(198, 44, 35,1);">{{$result->protect}}</span>
                     </p>
                 </div>
-                <div class="col-md-3 pt-5 pr-5">
-                    <p class="text-secondary" style="font-family: 'Titillium Web', sans-serif;"> @lang('You see the risks and challenges to using media and technology in your teaching practice.')</p>
+                <div class="col-md-3 col-12 p-2 pt-5">
+                    <h6>@lang('Protect')</h6>
+                    <p class="text-secondary p-4" style="font-family: 'Titillium Web', sans-serif;"> @lang('You see the risks and challenges to using media and technology in your teaching practice.')</p>
                 </div>
             </div>
         </div>
-        <div class="card col-md-12 col-12 my-3">
-            <div class="row p-3">
-                <div class="container">
-                    <canvas id="motivationch"></canvas>
-                </div>
+        <div class="card mt-3">
+            <h2 class="mt-2">
+                @lang('Your All Motivations')
+            </h2>
+            <div class="card-body p-0 d-none d-block d-sm-block d-md-none">
+                <canvas id="motivationch" width="600" height="600"></canvas>
             </div>
-            <h3>@lang('Share your score')</h3>
-            <div id="shareIconsCountInside" class="my-2"></div>
+
+            <div class="card-body p-0 d-none d-md-block d-lg-block d-xl-block" width="400" height="400">
+                <canvas id="motivationch1"></canvas>
+            </div>
         </div>
+        <h3 class="mt-2">@lang('Share your score')</h3>
+        <div id="shareIconsCountInside" class="my-2"></div>
     </div>
 </div>
 
@@ -287,7 +294,7 @@ $("#shareIconsCountInside").jsSocials({
 				title: {
 					display: true,
 					text: '@lang('Empower vs. Protect')',
-                    fontSize : 36
+                    fontSize : 20
 				},
 				animation: {
                     duration: 0
@@ -353,9 +360,85 @@ new Chart(document.getElementById("motivationch"), {
     },
     options: {
       title: {
-        display: true,
+        display: false,
         text: '@lang('Your All Motivations')',
-        fontSize:36
+        fontSize:20
+      },
+      scale: {
+			ticks: {
+				beginAtZero: true
+			}
+		},
+        layout: {
+            padding: {
+                left: 50,
+                right: 50,
+                top: 50,
+                bottom: 50
+            }
+        },
+		animation: {
+            duration: 0
+		}
+    }
+});
+
+new Chart(document.getElementById("motivationch1"), {
+    type: 'radar',
+    data: {
+        labels: ['Activist', 'Alt', 'Demystifier', 'Motivator', 'Professional','Professor','Spirit Guide','Taste Maker','Teacher 2.0','Techie','Trendsetter','Watchdog'],
+        datasets: [
+        {
+            label: "You",
+            fill: true,
+            backgroundColor: 'rgba(255, 206, 86, 0.4)',
+            borderColor: 'rgba(255, 206, 86, 0.8)',
+            pointBorderColor: "#fff",
+            pointBackgroundColor:  'rgba(255, 206, 86, 0.8)',
+            data: [
+                {{  $result->activist}},
+                {{  $result->alt}},
+                {{  $result->demystifier}},
+                {{  $result->motivator}},
+                {{  $result->professional}},
+                {{  $result->professor}},
+                {{  $result->spirit_guide}},
+                {{  $result->taste_maker}},
+                {{  $result->teacher}},
+                {{  $result->techie}},
+                {{  $result->trendsetter}},
+                {{  $result->watchdog }}
+            ]
+        },
+        {
+            label: "Total Users",
+            fill: true,
+            backgroundColor: "rgba(68, 197, 52, 0.2)",
+            borderColor: "rgba(68, 197, 52, 0.6)",
+            pointBorderColor: "#fff",
+            pointBackgroundColor: "rgba(68, 197, 52, 0.6)",
+            data: [
+                {{ ($activist_i +  $activist_g)/ $total_user }},
+                {{ ($alt_i +  $alt_g)/ $total_user }},
+                {{ ($demystifier_i +  $demystifier_g)/ $total_user }},
+                {{ ($motivator_i +  $motivator_g)/ $total_user }},
+                {{ ($professional_i +  $professional_g)/ $total_user }},
+                {{ ($professor_i +  $professor_g)/ $total_user }},
+                {{ ($spirit_guide_i + $spirit_guide_g)/ $total_user }},
+                {{ ($taste_maker_i + $taste_maker_g)/ $total_user }},
+                {{ ($teacher_i + $teacher_g)/ $total_user }},
+                {{ ($techie_i + $teacher_g)/ $total_user }},
+                {{ ($trendsetter_i + $trendsetter_g)/ $total_user }},
+                {{ ($watchdog_i + $watchdog_g)/ $total_user }}
+            ]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: false,
+        text: '@lang('Your All Motivations')',
+        fontSize:20
       },
       scale: {
 			ticks: {

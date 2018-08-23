@@ -99,16 +99,16 @@
             </div>
             --}}
             <div class="row mb-3">
-                <div class="col-md-5 col-12 pt-5">
-                    <strong class="pt-5">@lang('Questions')</strong>
+                <div class="col-md-5 col-12 pt-5 mb-2">
+                    <strong class="pt-5">@lang('Questions') : </strong>
                 </div>
                 <div class="col-md-7 col-12">
                     <strong>
-                        <label class="radio-inline col-2">@lang("Strongly disagree")</label>
-                        <label class="radio-inline col-2">@lang("Somewhat disagree")</label>
-                        <label class="radio-inline col-2">@lang("Neither agree nor disagree")</label>
-                        <label class="radio-inline col-2">@lang("Somewhat agree")</label>
-                        <label class="radio-inline col-2">@lang("Strongly agree")</label>
+                        <label class="radio-inline col-12 col-md-2">@lang("Strongly disagree")</label>
+                        <label class="radio-inline col-12 col-md-2">@lang("Somewhat disagree")</label>
+                        <label class="radio-inline col-12 col-md-2">@lang("Neither agree nor disagree")</label>
+                        <label class="radio-inline col-12 col-md-2">@lang("Somewhat agree")</label>
+                        <label class="radio-inline col-12 col-md-2">@lang("Strongly agree")</label>
                     </strong>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                 <?php $count++ ?>
             @endforeach
             <div class="form-group row my-5">
-                <div class="col-6 offset-3">
+                <div class="col-8 offset-2">
                     <button type="submit" class="btn btn-primary col-12" style="background-color:#563D7C">
                         @lang('Send')
                     </button>
