@@ -4,8 +4,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="media literacy, survey, digital media education, media education lab">
-    <meta name="author" content="">
 
     <title>@lang('Media Literacy Survey')</title>
     <link rel="icon" href="../images/Quiz.png">
@@ -24,6 +22,27 @@
     <meta name="description" content="Measure your digital media and literacy skills. Use our free measurement immediately. Learn your digital motivation instantly.">
     <meta name="keywords" content="Digital Motivation, Digital Literacy, Media Literacy, Media Education, Media Education Lab, Renee Hobbs, Sait Tüzel">
     <meta name="author" content="Hayreddin Tüzel">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content=">@lang('Media Literacy Survey')">
+    <meta itemprop="description" content="Measure your digital media and literacy skills. Use our free measurement immediately. Learn your digital motivation instantly.">
+    <meta itemprop="image" content="https://www.setyourmotivation.com/images/motivation1__.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="@lang('Media Literacy Survey')">
+    <meta name="twitter:description" content="Measure your digital media and literacy skills. Use our free measurement immediately. Learn your digital motivation instantly.">
+    <meta name="twitter:creator" content="@author_handle">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="https://www.setyourmotivation.com/images/motivation1__.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Media Education Survey" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.setyourmotivation.com/" />
+    <meta property="og:image" content="https://www.setyourmotivation.com/images/motivation1__.png"/>
+    <meta property="og:description" content="Measure your digital media and literacy skills. Use our free measurement immediately. Learn your digital motivation instantly." />
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
