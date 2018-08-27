@@ -26,20 +26,20 @@
           <h2 class="font-weight-light mb-3 text-dark">@lang('Take the quiz as individually or in group!')</h2>
         </div>
       </div>
-        
+
             <div class="row tex-center">
                 <div class="col-sm-12 col-lg-6 mt-3">
-                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Indıvually')</a>
+                    <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Individually')</a>
                 </div>
                 <div class="col-sm-12 col-lg-6 mt-3">
                     <a href="{{ route('group_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz in Group')</a>
                 </div>
             </div>
-    
+
         <hr class="star-dark">
         <h2 class="font-weight-light mb-3 text-dark">@lang('What is Your Digital Learning Motivation?')</h2>
         <p class="font-weight-light mb-3 text-dark">@lang('No matter what your motivation is, Powerful Voices for Kids has ideas to improve digital& media literacy in your classroom.') </p>
-        
+
         <div class="row">
             @foreach ($motivations as $motivation)
                 <div class="col-12 col-md-4 col-lg-2">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-        
+
             <div class="row mt-5">
                     <div class="col mb-3 mt-1">
                         <h2 class="font-weight-light mb-3 text-dark">@lang('Help Improve Quiz Translate')</h2>
@@ -89,7 +89,7 @@
                     <a href="{{ route('download_translate')}}" target="_blank" class="btn btn-warning btn-lg nonedecoration text-dark" style="text-decoration:none">@lang('Download Translate File')</a>
                 </div>
             </div>
-        
+
     </section>
 
 
