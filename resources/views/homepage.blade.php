@@ -22,9 +22,11 @@
     </div>
 
     <div class="row">
+     <!--
         <div class="col">
-          <h2 class="font-weight-light mb-3 text-dark">@lang('Take the quiz as individually or in group!')</h2>
+         <h2 class="font-weight-light mb-3 text-dark">@lang('Take the quiz as individually or in group!')</h2>
         </div>
+     -->
       </div>
 
             <div class="row tex-center">
