@@ -22,13 +22,7 @@
     </div>
 
     <div class="row">
-     <!--
-        <div class="col">
-         <h2 class="font-weight-light mb-3 text-dark">@lang('Take the quiz as individually or in group!')</h2>
-        </div>
-     -->
       </div>
-
             <div class="row tex-center">
                 <div class="col-sm-12 col-lg-6 mt-3">
                     <a href="{{ route('individual_survey')}}" class="btn btn-lg nonedecoration text-white col-8" style="text-decoration:none; background-color:#563D7C">@lang('Take Quiz Individually')</a>
