@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'verification_token' => str_random(40)
         ]);      
-        $admin_email = User::find(1)->email;
+        $admin_email = config('mail.adminEmail');
         Mail::to($admin_email)->send(new VerifyMail($user));
 
         return $user;
