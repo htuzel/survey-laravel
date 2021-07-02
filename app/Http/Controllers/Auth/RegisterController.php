@@ -7,6 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\VerifyMail;
+use App\Mail\ConfirmAccountMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Lang;
+
 
 class RegisterController extends Controller
 {
@@ -63,10 +69,40 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+            'verification_token' => str_random(40)
+        ]);      
+        $admin_email = User::find(1)->email;
+        Mail::to($admin_email)->send(new VerifyMail($user));
+
+        return $user;
+    }
+
+    public function verifyUser($verification_token)
+    {
+        $user = User::where('verification_token', $verification_token)->first();
+        if(isset($user) ){
+            if($user->verification_token != null) {
+                $user->verification_token = null;
+                $user->save();
+                $status = __("Users account is verified.");
+            }else{
+                $status = __("Users account is verified.");
+            }
+            Mail::to($user->email)->send(new ConfirmAccountMail($user));
+        }else{
+            return redirect('/login')->with('warning', __("Sorry user cannot be identified."));
+        }
+
+        return redirect('/login')->with('status', $status);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $this->guard()->logout();
+        return redirect('/login')->with('status',__('You are successfully registered. But your account must confirmed by admin. Please wait, we will mail after confirmation'));
     }
 }

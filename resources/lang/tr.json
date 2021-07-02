@@ -290,7 +290,17 @@
     "What is?" :"Anket Hakkında",
     "Digital Learning Motivation Quiz for Educators (DLMQE):": "Eğitimciler İçin Dijital Öğrenme ve Medya Okuryazarlığı Anketi:",
     "Quiz Explanation": "<a href='https://onlinelibrary.wiley.com/doi/pdf/10.1111/bjet.12326' target='_blank'>Anket hakkında detaylı bilgi için tıklayınız</a>",
-    "Take the quiz as individually or in group!": "Bireysel yada grup halinde soruları cevaplayın!"
-
+    "Take the quiz as individually or in group!": "Bireysel yada grup halinde soruları cevaplayın!",
+    "Your account is waiting confirmation. Please wait, we will mail after confirmation.":"Hesabınız admin tarafından doğrulanmayı bekliyor. Doğrulama işlemi gerçekleştiğinde size mail göndereceğiz",
+    "Sorry user cannot be identified.":"Kullanıcı bulunamadı.",
+    "Users account is verified.":"Kullanıcı hesabı doğrulandı",
+    "You are successfully registered. But your account must confirmed by admin. Please wait, we will mail after confirmation":"Başarıyla kayıt oldunuz. Lütfen hesabınıızın onaylanmasını bekleyiniz. Hesabınız onayladığında size mail göndereceğiz",
+    "Welcome Email":"Hoşgeldin",
+    "Congratulations":"Tebrikler",
+    "Your <a href='https://www.setyourmotivation.com/login'> Set Your Motivation</a> account has been confirmed. You can login with your email address  and password.":"<a href='https://www.setyourmotivation.com/login'> Set Your Motivation</a> Hesabınız onaylandı. E-posta adresiniz ve şifreniz ile giriş yapabilirsiniz.",
+    "Your email address":"Email adresiniz",
+    "A new user has registered  , Please click on the below link to verify the account.":"Yeni bir kullanıcı kaydoldu, Hesabı doğrulamak için lütfen aşağıdaki bağlantıya tıklayın.",
+    "Verify Account":"Hesabı onayla",
+    "Dashboard":"Dashboard"
 
 }

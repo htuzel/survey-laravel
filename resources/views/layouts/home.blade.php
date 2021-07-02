@@ -111,18 +111,15 @@
           </li>
 
 
-
-        @guest
-
-         <li class="nav-item dropdown dropright text-capitalize">
-                <div class="container text-center">
-                        <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="#"><i class="fas fa-globe text-white"></i></a></span>
-                        <a class="nav-link dropdown-toggle pt-0" id="navbardrop"  href="#" role="button" data-toggle="dropdown"
+          <li class="nav-item dropdown dropright text-capitalize">
+            <div class="container text-center">
+                    <span class="d-none d-md-block d-lg-block pt-4 mb-0"><a href="#"><i class="fas fa-globe text-white"></i></a></span>
+                    <a class="nav-link dropdown-toggle pt-0" id="navbardrop"  href="#" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" v-pre>
           <strong id="locale">{{ app()->getLocale() }} </strong>
           <span class="caret"></span>
           </a>
-           <div class="dropdown-menu ">
+          <div class="dropdown-menu ">
             @foreach (language()->allowed() as $code => $name)
             <span class="caret"></span>
             <span class="caret"></span>
@@ -130,15 +127,37 @@
             @endforeach
                     </div>
 
-         </li>
+        </li>
 
+        @guest
+        {{-- <li class="nav-item dropdown dropright text-capitalize">
+          <a class="nav-link dropdown-toggle" id="navbardrop"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+           Auth <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+           <a class="dropdown-item" href="{{ route('login') }}"
+          >
+           {{ __('Login') }}
+          </a>
+           <a class="dropdown-item" href="{{ route('register') }}"
+           >
+           {{ __('Register') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+          </div>
+        </li> --}}
         @else
-
          <li class="nav-item dropdown dropright text-capitalize">
            <a class="nav-link dropdown-toggle" id="navbardrop"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->name }} <span class="caret"></span>
            </a>
            <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ route('home') }}"
+           >
+            {{ __('Dashboard') }}
+           </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
