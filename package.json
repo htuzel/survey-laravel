@@ -14,12 +14,12 @@
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
-        "laravel-mix": "^2.0",
+        "laravel-mix": "^6.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12"
     },
     "dependencies": {
-        "copy-webpack-plugin": "^4.5.2",
+        "copy-webpack-plugin": "^11.0.0",
         "imagemin-mozjpeg": "^7.0.0",
         "imagemin-webpack-plugin": "^2.2.0"
     }
