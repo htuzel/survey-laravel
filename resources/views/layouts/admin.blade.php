@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="utf-8">
@@ -23,6 +22,69 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
+    @if(app()->getLocale() === 'ar')
+    <!-- RTL CSS for Arabic language -->
+    <style>
+      /* Basic RTL overrides */
+      body {
+        text-align: right;
+      }
+      
+      /* Reverse floats */
+      .float-left, .pull-left {
+        float: right !important;
+      }
+      
+      .float-right, .pull-right {
+        float: left !important;
+      }
+      
+      /* Realign text */
+      .text-left {
+        text-align: right !important;
+      }
+      
+      .text-right {
+        text-align: left !important;
+      }
+      
+      /* Admin specific adjustments */
+      #sidebar {
+        text-align: right;
+        right: 0;
+        left: auto;
+      }
+      
+      #content {
+        margin-right: 250px;
+        margin-left: 0;
+      }
+      
+      /* When sidebar is collapsed */
+      #sidebar.active {
+        margin-right: -250px;
+        margin-left: 0;
+      }
+      
+      #sidebar.active + #content {
+        margin-right: 0;
+      }
+      
+      .dropdown-menu {
+        text-align: right;
+      }
+      
+      /* Form controls */
+      .form-group label {
+        text-align: right;
+      }
+      
+      /* Adjust tables */
+      th, td {
+        text-align: right;
+      }
+    </style>
+    @endif
 
 </head>
 

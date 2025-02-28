@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
   <head>
     <meta charset="utf-8">
@@ -17,6 +17,64 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
+
+    @if(app()->getLocale() === 'ar')
+    <!-- RTL CSS for Arabic language -->
+    <style>
+      /* Basic RTL overrides */
+      body {
+        text-align: right;
+      }
+      
+      /* Reverse floats */
+      .float-left, .pull-left {
+        float: right !important;
+      }
+      
+      .float-right, .pull-right {
+        float: left !important;
+      }
+      
+      /* Realign text */
+      .text-left {
+        text-align: right !important;
+      }
+      
+      .text-right {
+        text-align: left !important;
+      }
+      
+      /* Adjust navbar and other layout elements */
+      .ml-auto {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+      
+      .mr-auto {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+      }
+      
+      /* Dropdown menus */
+      .dropdown-menu {
+        text-align: right;
+      }
+      
+      .dropdown-menu-right {
+        right: auto;
+        left: 0;
+      }
+      
+      /* OWL Carousel RTL adjustments */
+      .owl-carousel {
+        direction: ltr;
+      }
+      
+      .owl-carousel .owl-item {
+        direction: rtl;
+      }
+    </style>
+    @endif
 
     <!-- SEO -->
     <meta name="description" content="Measure your digital media and literacy skills. Use our free measurement immediately. Learn your digital motivation instantly.">

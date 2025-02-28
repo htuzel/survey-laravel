@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
   <head>
     <meta charset="utf-8">
@@ -15,6 +15,55 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    @if(app()->getLocale() === 'ar')
+    <!-- RTL CSS for Arabic language -->
+    <style>
+      /* Basic RTL overrides */
+      body {
+        text-align: right;
+      }
+      
+      /* Reverse floats */
+      .float-left, .pull-left {
+        float: right !important;
+      }
+      
+      .float-right, .pull-right {
+        float: left !important;
+      }
+      
+      /* Realign text */
+      .text-left {
+        text-align: right !important;
+      }
+      
+      .text-right {
+        text-align: left !important;
+      }
+      
+      /* Adjust navbar and other layout elements */
+      .ml-auto {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+      
+      .mr-auto {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+      }
+      
+      /* Dropdown menus */
+      .dropdown-menu {
+        text-align: right;
+      }
+      
+      .dropdown-menu-right {
+        right: auto;
+        left: 0;
+      }
+    </style>
+    @endif
 
     <script src="{{ asset('js/app.js') }}"></script>
   </head>
