@@ -52,7 +52,7 @@
 
         <div class="row mt-5">
             <div class="col mb-1 mt-1">
-                <h2 class="font-weight-light mb-3 text-dark">@lang('What Does the Research Say?')</h2>
+                <h2 class="font-weight-light mb-3 text-dark">@lang('Academic References to Our Survey!')</h2>
                 <hr class="star-dark">
             </div>
         </div>
@@ -74,9 +74,9 @@
 
             <div class="row mt-5">
                     <div class="col mb-3 mt-1">
-                        <h2 class="font-weight-light mb-3 text-dark">@lang('Help Improve Quiz Translate')</h2>
+                        <h2 class="font-weight-light mb-3 text-dark">@lang('Join Us')</h2>
                         <hr class="star-dark">
-                        <p class="font-weight-light mb-3 text-dark">@lang('You can help make our translations better, and even add new languages, as part of the our translate community. If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact with Sait Tüzel (sait@mediaeducationlab.com).') </p>
+                        <p class="font-weight-light mb-3 text-dark">@lang('If you want to translate the survey into your own language, you can translate the following translation file into your own language and contact us.') </p>
                     </div>
             </div>
 

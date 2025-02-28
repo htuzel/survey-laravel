@@ -196,7 +196,7 @@
                 </p>
           </div>
           <div class="col-xl-4 mb-5">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <h4 class="text-uppercase mb-4">@lang('Around the Web')</h4>
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
                 <a class="btn btn-outline-light btn-social text-center rounded-circle" target="_blank" href="https://www.facebook.com/mediaeducationlab">
