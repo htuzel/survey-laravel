@@ -280,11 +280,8 @@
           </div>
           <div class="col-xl-4">
             <h4 class="text-uppercase mb-4">@lang('Contact')</h4>
-            <p class="lead mb-0"><small>108 Davis Hall
+            <p class="lead mb-0"><small>
                 Media Education Lab </br>
-                Harrington School of Communication and Media </br>
-                University of Rhode Island </br>
-                Davis Hall Kingston, Rhode Island 02881 USA </br>
                 </br>
                 @lang('Email'): sait@mediaeducationlab.com  </small>
             </p>
